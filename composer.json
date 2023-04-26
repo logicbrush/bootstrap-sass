@@ -3,7 +3,7 @@
     "description": "Provides a starting point to style your app using sass",
     "keywords": ["sass"],
     "homepage": "https://github.com/logicbrush/bootstrap-sass",
-    "license": "MIT License",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "John Learn",
