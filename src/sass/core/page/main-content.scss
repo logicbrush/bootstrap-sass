@@ -1,0 +1,68 @@
+%main-content {
+  flex-grow: 1;
+
+  @include on-phone {
+    padding-top: $default-text-size * 0;
+  }
+
+
+  & article, & section {
+    // The hero section spans the full width of the viewport.
+    & > .hero {
+      //background: linear-gradient(rgba(darken($header-foreground-color, 10%), 1), rgba($header-foreground-color, 0.8));
+      //border-bottom: 4px solid rgba(lighten($primary-hilight-color, 10%), 0.7);
+      //padding: ($default-text-size * 3) 0;
+
+      p, ul, ol {
+        font-size: $default-text-size * 1.2;
+      }
+
+      @include on-tablet-or-smaller {
+        border-bottom: 0;
+        padding: ($default-text-size * 2) 0;
+      }
+
+
+      .typography, .typography * {
+        color: $default-background-color;
+      }
+    }
+
+    // This is the first big block of content.  It has a slightly
+    // larger font than the rest of the a page.
+    & > .grid-aligned:first-child, & > .hero:first-child + .grid-aligned {
+      padding-bottom: $default-text-size * 3;
+
+      p, ul, ol {
+        //font-size: $default-text-size * 1.2;
+      }
+
+      @media screen {
+        .with-hero-image & {
+          &, & * {
+            text-shadow: 0 0 4em $default-background-color;
+          }
+        }
+      }
+
+      // &:first-child {
+      //   margin-top: $default-text-size * 2;
+      //   padding-top: $default-text-size;
+
+      //   @include on-phone {
+      //     margin-top: 0;
+      //   }
+      // }
+    }
+
+    & > .hero:first-child + .grid-aligned {
+      padding-top: $default-text-size * 2;
+      padding-bottom: $default-text-size * 2;
+    }
+
+    @media print {
+      padding: $default-text-size 0;
+    }
+  
+  }
+}

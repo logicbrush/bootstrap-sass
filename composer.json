@@ -1,0 +1,18 @@
+{
+    "name": "logicbrush/bootstrap-sass",
+    "description": "Provides a starting point to style your app using sass",
+    "keywords": ["sass"],
+    "homepage": "https://github.com/logicbrush/bootstrap-sass",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "John Learn",
+            "email": "jflearn@logicbrush.com"
+        },
+        {
+            "name": "Nick Hamma",
+            "email": "nicholas.hamma@logicbrush.com"
+        }
+    ],
+    "prefer-stable": true
+}

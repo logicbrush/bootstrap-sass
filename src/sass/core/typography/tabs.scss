@@ -1,0 +1,35 @@
+%typography {
+  %tabs {
+
+    %tab {
+      background-color: mix($default-background-color, $default-text-color, 95%);
+
+      border-top-left-radius: $default-roundover;
+      border-top-right-radius: $default-roundover;
+      margin-left: 0.1em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        color: mix($default-text-color, $default-background-color, 75%);
+        padding: 0.75em 1.5em;
+      }
+    }
+
+    %tab-active, %tab:hover {
+      background-color: mix($default-background-color, $default-text-color, 85%);
+      a {
+        color: $default-text-color;
+      }
+    }
+
+    %tab, %tab a {
+      transition: all 0.25s ease-in-out;
+    }
+
+  }
+}
+
+

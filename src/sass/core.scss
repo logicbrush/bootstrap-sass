@@ -1,0 +1,99 @@
+$max-tablet-width: $min-desktop-width - 1;
+$max-phone-width: $min-tablet-width - 1;
+
+$default-margin-top: $default-text-size * $default-line-height * 0.75;
+$default-margin-bottom:  $default-text-size * $default-line-height * 0.75;
+    
+@import "core/reset.scss";
+@import "core/responsive.scss";
+
+@import "core/layout/flow.scss";
+@import "core/layout/grid.scss";
+
+@import "core/typography/emphasis.scss";
+@import "core/typography/headings.scss";
+@import "core/typography/icons.scss";
+@import "core/typography/links.scss";
+@import "core/typography/lists.scss";
+@import "core/typography/paragraphs.scss";
+@import "core/typography/rules.scss";
+@import "core/typography/tables.scss";
+@import "core/typography/tabs.scss";
+
+@import "core/page/body.scss";
+@import "core/page/breadcrumbs.scss";
+@import "core/page/footer.scss";
+@import "core/page/header.scss";
+@import "core/page/main-content.scss";
+@import "core/page/main-navigation.scss";
+@import "core/page/pagination.scss";
+@import "core/page/shortcuts.scss";
+@import "core/page/sidebar.scss";
+
+@import "core/form/buttons.scss";
+@import "core/form/fieldsets.scss";
+@import "core/form/inputs.scss";
+@import "core/form/progress.scss";
+
+%typography {
+
+  font: $default-text-size $default-text-face, "Arial", sans-serif;
+  line-height: $default-line-height;
+  color: $default-text-color;
+
+  %block-content {
+
+    margin-top: $default-margin-top;
+    margin-bottom: $default-margin-bottom;
+    box-sizing: border-box;
+    display: block;
+    float: none;
+  }
+
+}
+
+
+// General print styling rules
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

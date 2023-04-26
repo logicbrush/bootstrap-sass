@@ -1,0 +1,33 @@
+.breadcrumbs {
+  ol {
+    color: mix($default-text-color, $default-background-color, 50%);
+    font-style: italic;
+    font-size: $default-text-size * 0.85 !important;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      + li:before {
+        content: " > ";
+      }
+
+      &:last-child {
+        a {
+          cursor: default;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    a {
+      color: mix($default-text-color, $default-background-color, 50%);
+      font-weight: normal;
+    }
+  }
+}
