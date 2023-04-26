@@ -1,0 +1,42 @@
+// Testmionials.
+.testimonial {
+  p {
+    border: 1px solid rgba($default-text-color, 0.3);
+    border-radius: $default-text-size;
+    padding: $default-text-size ($default-text-size * 3 / 2);
+    font-size: $default-text-size !important;
+    font-style: italic;
+
+    &:before {
+      font-family: $default-heading-face;
+      font-size: 500%;
+      content: '“';
+      position: absolute;
+      margin-left: -0.75em;
+      margin-top: -0.7em;
+      padding: 0.25em;
+      overflow: visible;
+      opacity: 0.3;
+    }
+  }
+
+  footer {
+    margin-top: $default-text-size / 4;
+    text-align: right;
+  }
+
+  img {
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-top: -$default-text-size;
+    margin-left: $default-text-size * 3 / 2;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

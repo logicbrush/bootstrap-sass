@@ -1,0 +1,28 @@
+%typography {
+
+  %strong {
+
+    /**
+     * When images and figures are marked as %strong, we, by default, set a 1
+     * pixel border in the default text color.
+     */
+    img, figure {
+      border: 1px solid $default-text-color;
+    }
+
+    font-weight: bold !important;
+  }
+
+  %emphasized {
+    font-style: italic !important;
+  }
+  
+}
+
+strong, b {
+  @extend %strong;
+}
+
+em, italic {
+  @extend %emphasized;
+}

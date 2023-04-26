@@ -1,0 +1,118 @@
+@mixin grid-layout($total_width, $gutter, $outer: $gutter / 2) {
+  
+  // Enable to visually indicate the grid.
+  $debug: false;
+
+  // Calculate outer width from total, gutter & column.
+  $column: ($total_width - $gutter * 12) / 12;
+
+  @include reset-spacing;
+
+  box-sizing: border-box;
+  max-width: $total_width;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 ($outer - $gutter / 2);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  & & {
+    width: auto;
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+    padding: 0;
+  }
+
+  @for $count from 1 through 12 {
+    $span-width: $column * $count + $gutter * $count - $gutter;
+
+    &>.span-#{$count}, &>.span-all {
+      @include reset-spacing;
+
+      @if $debug {
+        background: rgba(255, 0, 0, 0.1);
+      }
+
+      width: $span-width;
+      box-sizing: border-box;
+      margin: 0 ($gutter / 2);
+      position: relative;
+      float: left;
+
+      .width-one-half {
+        width: ($span-width - $gutter) / 2;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @for $count from 0 through 11 {
+    &>.offset-#{$count} {
+      margin-left: ($column * $count + $gutter * $count + $gutter / 2) !important;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet-width) and (max-width: $min-desktop-width - 1) {
+    @for $count from 1 through 12 {
+      &>.tablet-span-all,&>.tablet-span-#{$count} {
+        width: $column * $count + $gutter * ($count - 1);
+      }
+    }
+
+    @for $count from 0 through 11 {
+      &>.tablet-offset-#{$count} {
+        margin-left: ($column * $count + $gutter / 2 * ($count * 2 + 1)) !important;
+      }
+    }
+  }
+
+  &:after {
+    content: ' ';
+    display: block;
+    clear: left;
+  }
+}
+
+@mixin ungrid-layout($total_width, $margin, $spacing: 1em) {
+  display: block !important;
+
+  @for $count from 1 through 12 {
+    &>.span-all, &>.span-#{$count}, &>.tablet-span-all, &>.tablet-span-#{$count} {
+      width: auto !important;
+      margin-right: $margin !important;
+      margin-left: $margin !important;
+
+      // The following lines are to allow space for the iPhone X notch
+      // unquote is used so that the sass compiler does not compile the css max rule
+      margin-right: unquote("max(env(safe-area-inset-right), #{$margin}) !important");
+      margin-left: unquote("max(env(safe-area-inset-left), #{$margin}) !important");
+      float: none !important;
+
+      .width-one-half {
+        width: ($total_width - $margin*2) / 2;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      & & {
+        margin: 0 !important;
+      }
+    }
+
+    & & {
+      margin: 0 !important;
+    }
+
+    *+.span-all, *+.span-#{$count}, *+.tablet-span-all, *+.tablet-span-#{$count} {
+      margin-top: $spacing !important;
+    }
+  }
+}

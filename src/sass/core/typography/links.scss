@@ -1,0 +1,22 @@
+%typography {
+
+  %link, a {
+
+    color: $primary-hilight-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // In paragraph content, we default bold the links to make them easier to
+  // read.
+  p, ul, ol {
+    a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  
+}

@@ -1,0 +1,40 @@
+%typography {
+
+  %table {
+    
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+
+    th, td {
+
+      border: 1px solid mix($default-background-color, $default-text-color, 90%);
+      padding: 0.5em 1em;
+      vertical-align: baseline;
+
+      &, & p {
+        font-size: ($default-text-size * 0.9) !important;
+      }
+
+    }
+
+    thead {
+      th, td {
+        @extend %strong;
+      }
+    }
+
+    &.striped {
+      tbody {
+        tr:nth-child(even) {
+          background: mix($default-background-color, $default-text-color, 95%);
+        }
+      }
+    }
+  }
+
+}
+
+table {
+  @extend %table;
+}
