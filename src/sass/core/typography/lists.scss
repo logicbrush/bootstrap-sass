@@ -1,0 +1,40 @@
+%typography {
+ 
+  %list, ul, ol {
+    padding-left: 2.5em;
+
+    li {
+      display: list-item;
+    }
+
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  ul li {
+    list-style-type: disc;
+
+    li {
+      list-style-type: circle;
+
+      li {
+        list-style-type: square;
+      }
+    }
+  }
+
+  ol li {
+    list-style-type: decimal;
+
+    li {
+      list-style-type: lower-alpha;
+
+      li {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+  
+}

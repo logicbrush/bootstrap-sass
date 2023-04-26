@@ -1,0 +1,52 @@
+%rotate, .rotate {
+  position: relative;
+  
+  //border-top: 13px solid $primary-hilight-color;
+
+  .slide {
+
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 500px;
+
+    @include on-phone {
+      min-height: 300px;
+    }
+
+    img {
+      display: inline-block;
+      width: 100%;
+      float: left;
+
+      + img {
+        display: none;
+      }
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+ CSS HACK */
+      .grid-aligned {
+        position: relative !important;
+        display: flex; align-items: flex-end;
+        height: 500px;
+      }
+    }
+
+  }
+
+  %rotate-prev, %rotate-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  %typography & {
+    %rotate-prev, %rotate-next {
+      %icon { margin: 0 !important; }
+    }
+  }
+
+}

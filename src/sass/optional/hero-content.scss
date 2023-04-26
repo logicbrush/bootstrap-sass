@@ -1,0 +1,29 @@
+/**
+ * Pages can optionally have "hero" content at their start.  This is a big block
+ * of content, usually with an image background, that calls attention to a
+ * product or service.  Hero content can also rotate, if desired.
+ */
+%hero-content {
+  %rotate {
+    .slide {
+      .grid-aligned {
+        margin: 0 auto;
+      }
+    }
+    .slick-prev,.slick-next {
+      color: #ffffff;
+      font-size: 40px;
+      text-shadow: 0 0 20px #000000;
+    }
+    .slick-prev {
+      left: 15px;
+    }
+    .slick-next {
+      right: 15px;
+    }
+  }
+}
+
+.hero {
+  @extend %hero-content;
+}

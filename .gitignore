@@ -1,0 +1,7 @@
+# Composer
+/vendor/
+
+# Build
+/build/
+
+# Gitub

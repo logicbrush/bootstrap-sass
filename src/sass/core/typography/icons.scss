@@ -1,0 +1,21 @@
+%typography {
+
+  %icon {
+    font-size: 150%;
+    vertical-align: middle;
+    margin-bottom: 0.1em;
+    min-width: 1em;
+    text-align: center;
+    margin-right: 0.25em;
+  }
+
+  .material-icons, .fa {
+    @extend %icon;
+  }
+  .fa {
+    font-size: 120%;
+  }
+
+}
+
+

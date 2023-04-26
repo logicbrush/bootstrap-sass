@@ -1,0 +1,123 @@
+%page-footer {
+  background: $footer-background-color;
+  min-height: 30vh;
+  padding: 2em 0;
+
+  &, & * {
+    color: $footer-foreground-color;
+    font-size: $default-text-size;
+    line-height: min(1.2, $default-line-height) !important;
+  }
+
+  a {
+    font-weight: normal !important;
+  }
+
+  .contact {
+    h3:first-child {
+      margin-top: 0 !important;
+    }
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  .footer-menu {
+    nav {
+      > ul {
+        @include on-tablet-or-larger {
+          columns: 3;
+        }
+
+        > li {
+          > a {
+            font-weight: bold !important;
+            font-size: 100% !important;
+          }
+
+          > ul {
+            margin-top: $default-text-size / 2;
+
+            > li + li {
+              margin-top: -$default-text-size / 3;
+            }
+          }
+        }
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          margin-bottom: $default-text-size / 2;
+          list-style: none;
+          break-inside: avoid-column;
+          page-break-inside: avoid;
+
+          a {
+            font-size: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  .social {
+    &, & * {
+      font-size: $default-text-size * 1.8 !important;
+    }
+  }
+
+  .copyright {
+    &, & * {
+      font-size: $default-text-size * 0.75 !important;
+    }
+  }
+
+  @media print {
+    min-height: 0;
+    padding: 0.5em 0 0 0;
+
+    .footer-menu, .social, .copyright {
+      display: none;
+    }
+
+    .contact {
+      width: auto;
+      font-size: 60%;
+
+      p,
+      ul,
+      ol,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: $default-text-size / 2;
+        margin-bottom: $default-text-size / 2;
+      }
+    }
+  }
+
+  .built-by {
+
+    &, & * {
+      font-size: 10px;
+    }
+
+    text-align: center;
+
+    * {
+      color: mix(white, darken($footer-foreground-color, 50%));
+    }
+
+    .logicbrush-logo {
+      position: relative;
+      top: 3px;
+      height: 14px;
+      fill: mix(white, darken($footer-foreground-color, 50%));
+    }
+  }
+}

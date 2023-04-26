@@ -1,0 +1,16 @@
+/**
+ * Implementation of rotate using slick-slider.
+ */
+.slick-slider {
+  @extend %rotate !optional;
+  &>.slick-prev { 
+    @extend %rotate-prev !optional; 
+  }
+  &>.slick-next { 
+    @extend %rotate-next !optional; 
+  }
+  .slick-slide {
+    .item { @extend %gallery-item !optional; }
+    line-height: 1;
+  }
+}

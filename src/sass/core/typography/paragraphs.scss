@@ -1,0 +1,11 @@
+%typography {
+
+  %paragraph {
+    @extend %block-content;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+  
+}

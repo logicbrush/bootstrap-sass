@@ -1,0 +1,25 @@
+/** Pagination **/
+.pagination {
+  ul.PageNumbers {
+
+    li {
+
+      display: inline-block;
+      float: left;
+
+      & + li {
+        margin-left: 0.75em;
+      }
+
+      &.active {
+        background: $primary-hilight-color;
+        border-radius: 50%;
+        padding: 0 0.5em;
+
+        a {
+          color: $default-background-color;
+        }
+      }
+    }
+  }
+}

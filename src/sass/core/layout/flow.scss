@@ -1,0 +1,69 @@
+@mixin flow-layout {
+
+  @include reset-spacing;
+
+  // Basic text alignment.
+  %flow-align-left {
+    text-align: left;
+  }
+
+  %flow-align-right {
+    text-align: right;
+  }
+
+  %flow-align-center {
+    text-align: center;
+  }
+
+  %flow-align-justify {
+    text-align: justify;
+  }
+
+  // Escaping the basic flow.
+  %flow-escape-defaults {
+    
+    @extend %block-content;
+    
+    height: auto;
+    max-width: 100%;
+
+    @media print {
+      margin-top: $default-text-size / 2;
+      margin-bottom: $default-text-size / 2;
+    }
+
+  }
+
+  %flow-escape-center {
+    @extend %flow-escape-defaults;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  %flow-escape-left-alone {
+    @extend %flow-escape-defaults;
+    margin-left: 0;
+  }
+
+  %flow-escape-right-alone {
+    @extend %flow-escape-defaults;
+    margin-right: 0;
+  }
+
+  %flow-escape-left, %flow-escape-right {
+    @extend %flow-escape-defaults;
+    max-width: 50%;
+    margin-top: 0.5ex;
+  }
+
+  %flow-escape-left {
+    margin-right: $default-text-size * 2;
+    float: left;
+  }
+
+  %flow-escape-right {
+    margin-left: $default-text-size * 2;
+    float: right;
+  }
+
+}

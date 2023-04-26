@@ -1,0 +1,90 @@
+  /**
+   * Content Blocks
+   *
+   * There are three content block styles that we can customize.
+   **/
+   .content-blocks {
+    //padding: ($default-text-size * 2) 0 ($default-text-size * 4) 0;
+    //background: $default-background-color;
+
+    // Content blocks can be assigned an icon, which we make a little bit of
+    // space for on the left.
+    .content-block .fa-icon {
+      position: absolute;
+      font-size: 200%;
+      margin-right: -1.15em;
+      margin-top: 0.72em;
+      right: 100%;
+      width: 1em;
+      text-align: center;
+
+      @include on-phone {
+        margin-top: -0.1em;
+        margin-right: -1.85em;
+      }
+    }
+
+    .content-block.with-icon {
+      padding-left: 3.45em;
+    }
+
+    @for $count from 1 through 3 {
+      &.content-blocks-style-#{$count} {
+        padding: ($default-text-size * 2) 0 ($default-text-size * 3) 0;
+      }
+    }
+
+    &.content-blocks-style-1 {
+      background-color: $content-block-style-1-background-color;
+
+      @include on-tablet-or-smaller {
+        background-color: mix(rgba($content-block-style-1-background-color, 1), rgba($default-background-color, 1), 80%);
+      }
+
+
+      .typography {
+        h1, h2, h3, h4, h5, h6 {
+          clear: none;
+          color: darken($content-block-style-1-foreground-color, 10%);
+        }
+
+        p, ul, ol {
+          color: $content-block-style-1-foreground-color;
+        }
+
+        .fa-icon {
+          color: $content-block-style-1-icon-color;
+        }
+      }
+    }
+
+    &.content-blocks-style-2 {
+      background-color: $content-block-style-2-background-color;
+
+      @include on-tablet-or-smaller {
+        background-color: mix(rgba($content-block-style-2-background-color, 1), rgba($default-background-color, 1), 70%);
+      }
+
+
+      h1, h2, h3, h4, h5, h6 {
+        clear: none;
+        color: lighten($content-block-style-2-foreground-color, 10%);
+      }
+
+      p, ul, ol {
+        color: $content-block-style-2-foreground-color;
+      }
+
+      .fa-icon {
+        color: $content-block-style-2-icon-color;
+      }
+    }
+
+    @media print {
+      padding: ($default-text-size / 2) 0 !important;
+
+      .content-block {
+        page-break-inside: avoid;
+      }
+    }
+  }

@@ -1,0 +1,18 @@
+/** Blog **/
+.SilverStripe\\Blog\\Model\\BlogPost, .blogSummary {
+  .authorDate, .tags {
+    font-size: 95% !important;
+    margin-top: -0.75em;
+  }
+
+  .blogVitals {
+    margin-top: -1em;
+
+    .readmore {
+      @extend .button;
+
+      font-size: 80% !important;
+    }
+  }
+}
+

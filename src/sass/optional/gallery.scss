@@ -1,0 +1,95 @@
+%gallery {
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+
+  %gallery-prev, %gallery-next {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+
+    :hover {
+      left: -1px;
+    }
+  }
+
+  %gallery-prev {
+    @extend %rotate-prev;
+    left: -1.5em;
+  }
+
+  %gallery-next {
+    @extend %rotate-next;
+    right: -1.5em;
+  }
+
+  %gallery-item {
+    padding: 5px;
+    margin: 0;
+    width: 25%;
+    box-sizing: border-box;
+
+    @include on-phone {
+      width: 100% !important;
+    }
+
+    img {
+      display: block;
+    }
+
+  }
+}
+
+/**
+ * An image gallery embedded in a widget.
+ */
+%gallery-widget {
+  %gallery {
+    margin: 0;
+  }
+  p {
+    font-size: ($default-text-size * 0.9) !important;
+    text-align: center;
+  }
+}
+
+// Image gallery
+body .pswp {
+  z-index: 10000;
+
+  .pswp__caption__center {
+    text-align: center;
+  }
+}
+
+/**
+ * An image gallery implemented using slick-slider.
+ */
+%gallery.slick-slider {
+  @extend %rotate;
+  &>.slick-prev { 
+    @extend %gallery-prev; 
+    %icon { margin: 0 !important; }
+  }
+  &>.slick-next { 
+    @extend %gallery-next; 
+    %icon { margin: 0 !important; }
+  }
+  .slick-slide {
+    .item { @extend %gallery-item; }
+    line-height: 1;
+  }
+}
+
+.image-gallery {
+  @extend %gallery;
+  .item {
+    @extend %gallery-item;
+  }
+}
+.gallery-widget {
+  @extend %gallery-widget;
+}
