@@ -1,0 +1,97 @@
+@import "../../core.scss";
+
+.grid-aligned {
+  @include on-tablet-or-larger {
+    @include grid-layout(100%, 5%, 5%);
+  }
+  @include on-phone {
+    @include ungrid-layout(100%, 5%);
+  }
+}
+
+%typography {
+
+  @include flow-layout;
+    
+  // These classes are used to align block elements.
+  .center { @extend %flow-escape-center; }
+  .leftAlone { @extend %flow-escape-left-alone; }
+  .left { @extend %flow-escape-left; }
+  .rightAlone { @extend %flow-escape-right-alone; }
+  .right { @extend %flow-escape-right; }
+
+  // These classes are used for text alignment.
+  .text-right { @extend %flow-align-right; }
+  .text-left { @extend %flow-align-left; }
+  .text-center { @extend %flow-align-center; }
+  .text-justify { @extend %flow-align-justify; }
+
+  // Images can be annotated with captions.
+  .captionImage {
+    &>img { 
+      @extend %flow-escape-center;
+      @extend %block-content;
+      max-width: 100% !important;
+      margin-top: 0;
+    }
+    &>p.caption { 
+      @extend %flow-align-center;
+      @extend %paragraph; 
+      font-size: $default-text-size * 0.85 !important;
+      max-width: 100% !important;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }  
+
+  .Actions, .btn-toolbar, .content-block {
+    @extend %block-content;
+  }
+
+  .rollup-page-navigation-tabs {
+    &>ul {
+      @extend %tabs;
+
+      background: none;
+
+      &>li {
+        @extend %tab;
+
+        a { 
+          background: none !important;
+        }
+
+        &.active {
+          @extend %tab-active;
+        }
+      }
+    }
+  }
+
+}
+
+.typography {
+  @extend %typography;
+}
+
+#page-body {
+
+  #page-header {
+    #main-menu { @extend %main-navigation; }
+    @extend %page-header;
+  }
+
+  #main-content {
+    @extend %main-content;
+    .side-bar {
+      @extend %sidebar;
+    }
+  }
+
+  #page-footer {
+    @extend %page-footer;
+  }
+
+  @extend %page-body;
+}
+
