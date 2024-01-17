@@ -1,34 +1,38 @@
-.mobile-shortcut-buttons {
-  position: fixed;
-  bottom: -50px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 250ms, transform 250ms, bottom 0ms 250ms;
+%theme-root {
 
-  html.scrolled & {
-    opacity: 0.9;
-    bottom: 30px;
-    transform: translateY(0);
-    transition: opacity 250ms, transform 250ms;
-  }
+	.mobile-shortcut-buttons {
+		position: fixed;
+		bottom: -50px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: opacity 250ms, transform 250ms, bottom 0ms 250ms;
 
-  a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 25px;
-    margin: 0 2px;
-    border-radius: 4px;
-    background: $primary-hilight-color;
-    color: $default-background-color;
-    box-shadow: 0 0 2px 1px rgba(invert($default-background-color), 0.15);
-  }
+		html.scrolled & {
+			opacity: 0.9;
+			bottom: 30px;
+			transform: translateY(0);
+			transition: opacity 250ms, transform 250ms;
+		}
 
-  @media print {
-    display: none;
-  }
+		a {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 25px;
+			margin: 0 2px;
+			border-radius: 4px;
+			background: $primary-hilight-color;
+			color: $default-background-color;
+			box-shadow: 0 0 2px 1px rgba(invert($default-background-color), 0.15);
+		}
+
+		@media print {
+			display: none;
+		}
+	}
+
 }

@@ -1,33 +1,36 @@
-.breadcrumbs {
-  ol {
-    color: mix($default-text-color, $default-background-color, 50%);
-    font-style: italic;
-    font-size: $default-text-size * 0.85 !important;
-    padding: 0;
-    margin: 0;
+%theme-root {
 
-    li {
-      list-style: none;
-      display: inline-block;
+	.breadcrumbs {
+		ol {
+			color: mix($default-text-color, $default-background-color, 50%);
+			font-style: italic;
+			font-size: $default-text-size * 0.85 !important;
+			padding: 0;
+			margin: 0;
 
-      + li:before {
-        content: " > ";
-      }
+			li {
+				list-style: none;
+				display: inline-block;
 
-      &:last-child {
-        a {
-          cursor: default;
+				+li:before {
+					content: " > ";
+				}
 
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
-    }
+				&:last-child {
+					a {
+						cursor: default;
 
-    a {
-      color: mix($default-text-color, $default-background-color, 50%);
-      font-weight: normal;
-    }
-  }
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			a {
+				color: mix($default-text-color, $default-background-color, 50%);
+				font-weight: normal;
+			}
+		}
+	}
 }

@@ -1,182 +1,186 @@
 /** Menu **/
 %main-navigation {
-  position: relative;
-  margin: ($default-text-size * 2) 0;
+	position: relative;
+	margin: ($default-text-size * 2) 0;
 
-  ul {
-    margin: 0;
-    padding: 0;
+	ul {
+		margin: 0;
+		padding: 0;
 
-    li {
+		li {
 
-      font-family: $default-heading-face;
-      text-transform: uppercase;
-      white-space: nowrap;
-      
-      margin: 0;
-      padding: 0;
-      list-style: none;
+			font-family: $default-heading-face;
+			text-transform: uppercase;
+			white-space: nowrap;
 
-      a {
-        text-decoration: none;
-        font-weight: 500;
-      }
-    }
-  }
+			margin: 0;
+			padding: 0;
+			list-style: none;
 
-  > ul {
-    text-align: right;
-    max-width: 100%;
+			a {
+				text-decoration: none;
+				font-weight: 500;
+			}
+		}
+	}
 
-    > li {
-      display: inline-block;
-      position: relative;
-      text-align: left;
+	>ul {
+		text-align: right;
+		max-width: 100%;
 
-      > a {
-        position: relative;
-        z-index: 3;
-        margin: 0 0.75em;
-        padding: 0.25em;
-        font-size: 110%;
-        color: $header-foreground-color;
-        display: inline;
+		>li {
+			display: inline-block;
+			position: relative;
+			text-align: left;
 
-        &.call-to-action {
-          background: rgba($primary-hilight-color, 0.8);
-          color: $default-background-color;
-        }
+			>a {
+				position: relative;
+				z-index: 3;
+				margin: 0 0.75em;
+				padding: 0.25em;
+				font-size: 110%;
+				color: $header-foreground-color;
+				display: inline;
 
-        transition: background-color 250ms;
+				&.call-to-action {
+					background: rgba($primary-hilight-color, 0.8);
+					color: $default-background-color;
+				}
 
-        > .menu-icon {
-          margin-right: 5px;
-        }
-      }
+				transition: background-color 250ms;
 
-      &.current > a,
-      &.section > a {
-        color: $primary-hilight-color;
+				>.menu-icon {
+					margin-right: 5px;
+				}
+			}
 
-        &.call-to-action {
-          color: $default-background-color;
-        }
-      }
+			&.current>a,
+			&.section>a {
+				color: $primary-hilight-color;
 
-      &:hover > a,
-      &:hover > a.call-to-action {
-        
-        border-bottom: 4px solid $primary-hilight-color;
-        color: $primary-hilight-color;
+				&.call-to-action {
+					color: $default-background-color;
+				}
+			}
 
-        > .menu-icon {
-          color: $tertiary-hilight-color;
-        }
-      }
+			&:hover>a,
+			&:hover>a.call-to-action {
 
-      ul {
-        position: absolute;
-        z-index: 1;
-        top: -99999px;
-        right: 0;
-        opacity: 0;
-        transform: translateY(-5px);
-        padding: 0.5em 0;
-        background: $header-background-color;
-        max-width: 240px;
-        min-width: 100%;
-        border-radius: 2px;
-        box-shadow: 0 2px 2px 1px rgba(invert($default-background-color), 0.15);
+				border-bottom: 4px solid $primary-hilight-color;
+				color: $primary-hilight-color;
 
-        //transition: opacity 250ms 250ms, transform 250ms 250ms, top 0ms 500ms;
+				>.menu-icon {
+					color: $tertiary-hilight-color;
+				}
+			}
 
-        @include touch-devices {
-          display: none;
-        }
+			ul {
+				position: absolute;
+				z-index: 1;
+				top: -99999px;
+				right: 0;
+				opacity: 0;
+				transform: translateY(-5px);
+				padding: 0.5em 0;
+				background: $header-background-color;
+				max-width: 240px;
+				min-width: 100%;
+				border-radius: 2px;
+				box-shadow: 0 2px 2px 1px rgba(invert($default-background-color), 0.15);
+
+				//transition: opacity 250ms 250ms, transform 250ms 250ms, top 0ms 500ms;
+
+				@include touch-devices {
+					display: none;
+				}
 
 
-        > li {
-          > a {
-            display: block;
-            color: $header-foreground-color;
-            padding: 0.5em 1em;
-            font-size: 90%;
+				>li {
+					>a {
+						display: block;
+						color: $header-foreground-color;
+						padding: 0.5em 1em;
+						font-size: 90%;
 
-            //transition: color 250ms, background-color 250ms;
+						//transition: color 250ms, background-color 250ms;
 
-            > .menu-icon {
-              margin-right: 5px;
-            }
-          }
+						>.menu-icon {
+							margin-right: 5px;
+						}
+					}
 
-          &.current > a,
-          &.section > a {
-            color: $primary-hilight-color;
-          }
+					&.current>a,
+					&.section>a {
+						color: $primary-hilight-color;
+					}
 
-          &:hover > a {
-            color: $default-background-color;
-            background: $primary-hilight-color;
-          }
-        }
-      }
+					&:hover>a {
+						color: $default-background-color;
+						background: $primary-hilight-color;
+					}
+				}
+			}
 
-      &:hover {
-        > ul {
-          top: 100%;
-          top: calc(100% + 0.5em - 3px);
-          opacity: 1;
-          transform: translateY(0);
-          z-index: 2;
-          transition: opacity 250ms, transform 250ms;
+			&:hover {
+				>ul {
+					top: 100%;
+					top: calc(100% + 0.5em - 3px);
+					opacity: 1;
+					transform: translateY(0);
+					z-index: 2;
+					transition: opacity 250ms, transform 250ms;
 
-          @include touch-devices {
-            display: block;
-          }
-        }
-      }
-    }
-  }
+					@include touch-devices {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 
-  @media print {
-    display: none;
-  }
+	@media print {
+		display: none;
+	}
 }
 
-#mm-main-menu {
+%theme-root {
 
-	@extend %typography;
+	#mm-main-menu {
 
-  z-index: 1;
+		@extend %typography;
 
-  a {
-    text-decoration: none;
-    font-weight: normal;
-    color: $default-text-color;
+		z-index: 1;
 
-    > .menu-icon {
-      margin-right: 5px;
-    }
-  }
+		a {
+			text-decoration: none;
+			font-weight: normal;
+			color: $default-text-color;
 
-  ul {
-    padding-left: 0;
-  }
+			>.menu-icon {
+				margin-right: 5px;
+			}
+		}
 
-  @media print {
-    display: none;
-  }
-}
+		ul {
+			padding-left: 0;
+		}
 
-.mobile-menu-button {
-  .menu-icon {
-    color: $primary-hilight-color;
-    font-size: 36px;
-  }
-}
+		@media print {
+			display: none;
+		}
+	}
 
-// The following line is to allow space for the iPhone X notch
-// unquote is used so that the sass compiler does not compile the css max rule
-.mm-panels > .mm-panel {
-  padding-left: unquote("max(env(safe-area-inset-left), 20px)");
+	.mobile-menu-button {
+		.menu-icon {
+			color: $primary-hilight-color;
+			font-size: 36px;
+		}
+	}
+
+	// The following line is to allow space for the iPhone X notch
+	// unquote is used so that the sass compiler does not compile the css max rule
+	.mm-panels>.mm-panel {
+		padding-left: unquote("max(env(safe-area-inset-left), 20px)");
+	}
+
 }

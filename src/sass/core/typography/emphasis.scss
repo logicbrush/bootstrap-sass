@@ -19,10 +19,14 @@
   
 }
 
+%theme-root, %typography {
+
 strong, b {
   @extend %strong;
 }
 
-em, italic {
+em, i {
   @extend %emphasized;
+}
+
 }

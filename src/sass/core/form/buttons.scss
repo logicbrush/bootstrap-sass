@@ -1,19 +1,23 @@
-%button { 
-  display: inline-block;
-  padding: 0.5em 0.75em;
-  font-size: 100%;
-  background: rgba($primary-hilight-color, $default-transparency);
-  color: $default-background-color !important;
-  border-radius: $default-roundover;
-  text-decoration: none !important;
-  border: none;
-  cursor: pointer;
-  margin: 0;
+%button {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	font-size: 100%;
+	background: rgba($primary-hilight-color, $default-transparency);
+	color: $default-background-color !important;
+	border-radius: $default-roundover;
+	text-decoration: none !important;
+	border: none;
+	cursor: pointer;
+	margin: 0;
 }
 
-%form, %typography {
-  .button, button, input[type="submit"] {
-    @extend %button;
-  }
-}
+%form,
+%typography {
 
+	.button,
+	button,
+	input[type="submit"] {
+		@extend %button;
+	}
+	
+}

@@ -20,6 +20,11 @@ $default-margin-bottom:  $default-text-size * $default-line-height * 0.75;
 @import "core/typography/tables.scss";
 @import "core/typography/tabs.scss";
 
+@import "core/form/buttons.scss";
+@import "core/form/fieldsets.scss";
+@import "core/form/inputs.scss";
+@import "core/form/progress.scss";
+
 @import "core/page/body.scss";
 @import "core/page/breadcrumbs.scss";
 @import "core/page/footer.scss";
@@ -29,11 +34,6 @@ $default-margin-bottom:  $default-text-size * $default-line-height * 0.75;
 @import "core/page/pagination.scss";
 @import "core/page/shortcuts.scss";
 @import "core/page/sidebar.scss";
-
-@import "core/form/buttons.scss";
-@import "core/form/fieldsets.scss";
-@import "core/form/inputs.scss";
-@import "core/form/progress.scss";
 
 %typography {
 
