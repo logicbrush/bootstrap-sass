@@ -1,6 +1,6 @@
 # bootstrap-sass
 
-`bootstrap-sass` is a SASS library for developing themes for average websites.
+A SASS library for designing typical websites.
 
 ## Modules
 
