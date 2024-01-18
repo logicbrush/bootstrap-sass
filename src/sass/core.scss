@@ -20,10 +20,10 @@ $default-margin-bottom: $default-text-size * $default-line-height * 0.75;
 @import "core/typography/tables.scss";
 @import "core/typography/tabs.scss";
 
-@import "core/forms/buttons.scss";
-@import "core/forms/fieldsets.scss";
-@import "core/forms/inputs.scss";
-@import "core/forms/progress.scss";
+@import "core/ui/buttons.scss";
+@import "core/ui/fieldsets.scss";
+@import "core/ui/inputs.scss";
+@import "core/ui/progress.scss";
 
 @import "core/page/body.scss";
 @import "core/page/breadcrumbs.scss";

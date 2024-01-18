@@ -1,104 +1,106 @@
 %page-header {
 
-  background: rgba($header-background-color, 1);
-  color: $header-foreground-color;
+	background: rgba($header-background-color, 1);
+	color: $header-foreground-color;
 
-  //background: rgba($header-background-color, 0.9);
-  position: relative;
-  top: 0;
-  z-index: 9999;
-  margin: 0;
+	//background: rgba($header-background-color, 0.9);
+	position: relative;
+	top: 0;
+	z-index: 9999;
+	margin: 0;
 
-  //transition: background-color 250ms, box-shadow 250ms, margin 250ms;
-  //padding-top: $default-text-size / 2;
-  //padding-bottom: $default-text-size / 2;
+	//transition: background-color 250ms, box-shadow 250ms, margin 250ms;
+	//padding-top: $default-text-size / 2;
+	//padding-bottom: $default-text-size / 2;
 
-  @include on-desktop {
-    position: -webkit-sticky;
-    position: sticky;
+	@include on-desktop {
+		position: -webkit-sticky;
+		position: sticky;
 
-    .scrolled & {
+		.scrolled & {
 
-      box-shadow: 0 0 2px 4px rgba(invert($header-background-color), 0.15);
-      background: rgba($header-background-color, $default-transparency);
+			box-shadow: 0 0 2px 4px rgba(invert($header-background-color), 0.15);
+			background: rgba($header-background-color, $default-transparency);
 
-      //box-shadow: 0 0 2px 4px rgba(invert($header-background-color), 0.15);
-      //margin-bottom: $default-text-size * 2;
+			//box-shadow: 0 0 2px 4px rgba(invert($header-background-color), 0.15);
+			//margin-bottom: $default-text-size * 2;
 
-      & + main {
-        //margin-top: $default-text-size - 2px;
-      }
-    }
-  }
+			&+main {
+				//margin-top: $default-text-size - 2px;
+			}
+		}
+	}
 
+	.logo {
+		h1 {
+			margin: ($default-text-size * 2) 0;
 
-  .logo {
-    h1 {
-      margin: ($default-text-size * 2) 0;
+			//transition: margin 250ms;
+			clear: none;
 
-      //transition: margin 250ms;
-      clear: none;
+			@include on-desktop {
+				margin: $default-text-size $default-text-size $default-text-size 0;
 
-      @include on-desktop {
-        margin: $default-text-size $default-text-size $default-text-size 0;
-
-        .scrolled & {
-          //margin: ($default-text-size / 2) 0;
-        }
-      }
-
-
-      @media print {
-        margin: 0;
-      }
-
-      img {
-        display: block;
-        transform-origin: left center;
-
-        //transition: transform 250ms;
-
-        @include on-desktop {
-          .scrolled & {
-            //transform: scale(0.8);
-          }
-        }
-      }
-    }
-  }
-
-  @include on-tablet-or-smaller {
-    > .grid-aligned {
-      .logo-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  }
+				.scrolled & {
+					//margin: ($default-text-size / 2) 0;
+				}
+			}
 
 
-  .mobile-menu {
-    @media print {
-      display: none;
-    }
-  }
+			@media print {
+				margin: 0;
+			}
 
-  @media print {
-    padding: 0;
-  }
+			img {
+				display: block;
+				transform-origin: left center;
+
+				//transition: transform 250ms;
+
+				@include on-desktop {
+					.scrolled & {
+						//transform: scale(0.8);
+					}
+				}
+			}
+		}
+	}
+
+	@include on-tablet-or-smaller {
+		>.grid-aligned {
+			.logo-container {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+
+
+	.mobile-menu {
+		@media print {
+			display: none;
+		}
+	}
+
+	@media print {
+		padding: 0;
+	}
 }
 
 html:not(.scrolled) {
-  .with-hero-image {
-    #page-header {
-      //background: rgba($header-background-color, 0);
+	.with-hero-image {
+		#page-header {
+			//background: rgba($header-background-color, 0);
 
-      &, & .logo, & .logo *, & #main-menu > ul > li > a {
-        //color: white !important;
-     
-      }
-    }
-  }
+			&,
+			& .logo,
+			& .logo *,
+			& #main-menu>ul>li>a {
+				//color: white !important;
+
+			}
+		}
+	}
 }
