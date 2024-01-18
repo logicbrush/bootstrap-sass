@@ -3,19 +3,19 @@
   @include reset-spacing;
 
   // Basic text alignment.
-  %flow-align-left {
+  %flow-align-content-left {
     text-align: left;
   }
 
-  %flow-align-right {
+  %flow-align-content-right {
     text-align: right;
   }
 
-  %flow-align-center {
+  %flow-align-content-center {
     text-align: center;
   }
 
-  %flow-align-justify {
+  %flow-justify-content {
     text-align: justify;
   }
 
@@ -34,34 +34,34 @@
 
   }
 
-  %flow-escape-center {
+  %flow-escape-content-center {
     @extend %flow-escape-defaults;
     margin-left: auto;
     margin-right: auto;
   }
 
-  %flow-escape-left-alone {
+  %flow-escape-content-left {
     @extend %flow-escape-defaults;
     margin-left: 0;
   }
 
-  %flow-escape-right-alone {
+  %flow-escape-content-right {
     @extend %flow-escape-defaults;
     margin-right: 0;
   }
 
-  %flow-escape-left, %flow-escape-right {
+  %flow-escape-content-left-wrapped, %flow-escape-content-right-wrapped {
     @extend %flow-escape-defaults;
     max-width: 50%;
     margin-top: 0.5ex;
   }
 
-  %flow-escape-left {
+  %flow-escape-content-left-wrapped {
     margin-right: $default-text-size * 2;
     float: left;
   }
 
-  %flow-escape-right {
+  %flow-escape-content-right-wrapped {
     margin-left: $default-text-size * 2;
     float: right;
   }

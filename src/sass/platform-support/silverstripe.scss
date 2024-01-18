@@ -2,55 +2,57 @@
 
 %typography {
 
+	@include flow-layout();
+
 	// These classes are used to align block elements.
 	.center {
-		@extend %flow-escape-center;
+		@extend %flow-escape-content-center;
 	}
 
 	.leftAlone {
-		@extend %flow-escape-left-alone;
+		@extend %flow-escape-content-left;
 	}
 
 	.left {
-		@extend %flow-escape-left;
+		@extend %flow-escape-content-left-wrapped;
 	}
 
 	.rightAlone {
-		@extend %flow-escape-right-alone;
+		@extend %flow-escape-content-right;
 	}
 
 	.right {
-		@extend %flow-escape-right;
+		@extend %flow-escape-content-right-wrapped;
 	}
 
 	// These classes are used for text alignment.
 	.text-right {
-		@extend %flow-align-right;
+		@extend %flow-align-content-right;
 	}
 
 	.text-left {
-		@extend %flow-align-left;
+		@extend %flow-align-content-left;
 	}
 
 	.text-center {
-		@extend %flow-align-center;
+		@extend %flow-align-content-center;
 	}
 
 	.text-justify {
-		@extend %flow-align-justify;
+		@extend %flow-justify-content;
 	}
 
 	// Images can be annotated with captions.
 	.captionImage {
 		&>img {
-			@extend %flow-escape-center;
+			@extend %flow-escape-content-center;
 			@extend %block-content;
 			max-width: 100% !important;
 			margin-top: 0;
 		}
 
 		&>p.caption {
-			@extend %flow-align-center;
+			@extend %flow-align-content-center;
 			@extend %paragraph;
 			font-size: $default-text-size * 0.85 !important;
 			max-width: 100% !important;
@@ -105,12 +107,16 @@
 
 	#page-body {
 
+		@extend %page-body;
+
 		#page-header {
+
+			@extend %page-header;
+
 			#main-menu {
 				@extend %page-menu;
 			}
 
-			@extend %page-header;
 		}
 
 		#main-content {
@@ -119,12 +125,12 @@
 			.side-bar {
 				@extend %page-sidebar;
 			}
+
 		}
 
 		#page-footer {
 			@extend %page-footer;
 		}
 
-		@extend %page-body;
 	}
 }

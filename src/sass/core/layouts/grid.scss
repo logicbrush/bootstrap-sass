@@ -1,120 +1,144 @@
 @use "sass:math";
 
+///
+/// A mixin to create a twelve-column, grid-based layout.
+/// 
+/// Specify the overall width and gutter width and column sizes will be
+/// automatically calculated for you.  Works best with absolute dimensions (vw,
+/// px); don't use percentages..
+/// 
+/// @param $total_width The overall width of the grid.
+/// 
+/// @param $gutter The width of the gutter between columns.
+/// 
+/// @param $outer Added padding to the left of the first column and right of the
+/// last column. Defaults to 1/2 $gutter.
+/// 
 @mixin grid-layout($total_width, $gutter, $outer: $gutter * 0.5) {
-  
-  // Enable to visually indicate the grid.
-  $debug: false;
 
-  // Calculate outer width from total, gutter & column.
-  $column: math.div($total_width - $gutter * 12, 12);
+	// Enable to visually indicate the grid.
+	$debug: false;
 
-  @include reset-spacing;
+	// Calculate outer width from total, gutter & column.
+	$column: math.div($total_width - $gutter * 12, 12);
 
-  box-sizing: border-box;
-  max-width: $total_width;
-  position: relative;
-  margin: 0 auto;
-  padding: 0 ($outer - $gutter * 0.5);
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+	@include reset-spacing;
 
-  & & {
-    width: auto;
-    margin-left: -$gutter * 0.5;
-    margin-right: -$gutter * 0.5;
-    padding: 0;
-  }
+	box-sizing: border-box;
+	max-width: $total_width;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 ($outer - $gutter * 0.5);
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 
-  @for $count from 1 through 12 {
-    $span-width: $column * $count + $gutter * $count - $gutter;
+	& & {
+		width: auto;
+		margin-left: -$gutter * 0.5;
+		margin-right: -$gutter * 0.5;
+		padding: 0;
+	}
 
-    &>.span-#{$count}, &>.span-all {
-      @include reset-spacing;
+	@for $count from 1 through 12 {
+		$span-width: $column * $count + $gutter * $count - $gutter;
 
-      @if $debug {
-        background: rgba(255, 0, 0, 0.1);
-      }
+		&>.span-#{$count},
+		&>.span-all {
+			@include reset-spacing;
 
-      width: $span-width;
-      box-sizing: border-box;
-      margin: 0 ($gutter * 0.5);
-      position: relative;
-      float: left;
+			@if $debug {
+				background: rgba(255, 0, 0, 0.1);
+			}
 
-      .width-one-half {
-        width: ($span-width - $gutter) * 0.5;
-      }
+			width: $span-width;
+			box-sizing: border-box;
+			margin: 0 ($gutter * 0.5);
+			position: relative;
+			float: left;
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-  }
+			.width-one-half {
+				width: ($span-width - $gutter) * 0.5;
+			}
 
-  @for $count from 0 through 11 {
-    &>.offset-#{$count} {
-      margin-left: ($column * $count + $gutter * $count + $gutter * 0.5) !important;
-    }
-  }
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
 
-  @media screen and (min-width: $min-tablet-width) and (max-width: $min-desktop-width - 1) {
-    @for $count from 1 through 12 {
-      &>.tablet-span-all,&>.tablet-span-#{$count} {
-        width: $column * $count + $gutter * ($count - 1);
-      }
-    }
+	@for $count from 0 through 11 {
+		&>.offset-#{$count} {
+			margin-left: ($column * $count + $gutter * $count + $gutter * 0.5) !important;
+		}
+	}
 
-    @for $count from 0 through 11 {
-      &>.tablet-offset-#{$count} {
-        margin-left: ($column * $count + $gutter * 0.5 * ($count * 2 + 1)) !important;
-      }
-    }
-  }
+	@media screen and (min-width: $min-tablet-width) and (max-width: $min-desktop-width - 1) {
+		@for $count from 1 through 12 {
 
-  &:after {
-    content: ' ';
-    display: block;
-    clear: left;
-  }
+			&>.tablet-span-all,
+			&>.tablet-span-#{$count} {
+				width: $column * $count + $gutter * ($count - 1);
+			}
+		}
+
+		@for $count from 0 through 11 {
+			&>.tablet-offset-#{$count} {
+				margin-left: ($column * $count + $gutter * 0.5 * ($count * 2 + 1)) !important;
+			}
+		}
+	}
+
+	&:after {
+		content: ' ';
+		display: block;
+		clear: left;
+	}
 }
 
 @mixin ungrid-layout($total_width, $margin, $spacing: 1em) {
-  display: block !important;
+	display: block !important;
 
-  @for $count from 1 through 12 {
-    &>.span-all, &>.span-#{$count}, &>.tablet-span-all, &>.tablet-span-#{$count} {
-      width: auto !important;
-      margin-right: $margin !important;
-      margin-left: $margin !important;
+	@for $count from 1 through 12 {
 
-      // The following lines are to allow space for the iPhone X notch
-      // unquote is used so that the sass compiler does not compile the css max rule
-      margin-right: unquote("max(env(safe-area-inset-right), #{$margin}) !important");
-      margin-left: unquote("max(env(safe-area-inset-left), #{$margin}) !important");
-      float: none !important;
+		&>.span-all,
+		&>.span-#{$count},
+		&>.tablet-span-all,
+		&>.tablet-span-#{$count} {
+			width: auto !important;
+			margin-right: $margin !important;
+			margin-left: $margin !important;
 
-      .width-one-half {
-        width: ($total_width - $margin*2) * 0.5;
-      }
+			// The following lines are to allow space for the iPhone X notch
+			// unquote is used so that the sass compiler does not compile the css max rule
+			margin-right: unquote("max(env(safe-area-inset-right), #{$margin}) !important");
+			margin-left: unquote("max(env(safe-area-inset-left), #{$margin}) !important");
+			float: none !important;
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
+			.width-one-half {
+				width: ($total_width - $margin*2) * 0.5;
+			}
 
-      & & {
-        margin: 0 !important;
-      }
-    }
+			img {
+				max-width: 100%;
+				height: auto;
+			}
 
-    & & {
-      margin: 0 !important;
-    }
+			& & {
+				margin: 0 !important;
+			}
+		}
 
-    *+.span-all, *+.span-#{$count}, *+.tablet-span-all, *+.tablet-span-#{$count} {
-      margin-top: $spacing !important;
-    }
-  }
+		& & {
+			margin: 0 !important;
+		}
+
+		*+.span-all,
+		*+.span-#{$count},
+		*+.tablet-span-all,
+		*+.tablet-span-#{$count} {
+			margin-top: $spacing !important;
+		}
+	}
 }
