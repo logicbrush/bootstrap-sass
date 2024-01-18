@@ -3,7 +3,7 @@
   p {
     border: 1px solid rgba($default-text-color, 0.3);
     border-radius: $default-text-size;
-    padding: $default-text-size ($default-text-size * 3 / 2);
+    padding: $default-text-size ($default-text-size * 3 * 0.5);
     font-size: $default-text-size !important;
     font-style: italic;
 
@@ -21,7 +21,7 @@
   }
 
   footer {
-    margin-top: $default-text-size / 4;
+    margin-top: $default-text-size * 0.25;
     text-align: right;
   }
 
@@ -31,7 +31,7 @@
     overflow: hidden;
     float: left;
     margin-top: -$default-text-size;
-    margin-left: $default-text-size * 3 / 2;
+    margin-left: $default-text-size * 3 * 0.5;
   }
 
   &:after {

@@ -28,8 +28,8 @@
     max-width: 100%;
 
     @media print {
-      margin-top: $default-text-size / 2;
-      margin-bottom: $default-text-size / 2;
+      margin-top: $default-text-size * 0.5;
+      margin-bottom: $default-text-size * 0.5;
     }
 
   }

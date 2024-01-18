@@ -81,7 +81,7 @@
     }
 
     @media print {
-      padding: ($default-text-size / 2) 0 !important;
+      padding: ($default-text-size * 0.5) 0 !important;
 
       .content-block {
         page-break-inside: avoid;

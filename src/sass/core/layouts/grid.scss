@@ -1,10 +1,12 @@
-@mixin grid-layout($total_width, $gutter, $outer: $gutter / 2) {
+@use "sass:math";
+
+@mixin grid-layout($total_width, $gutter, $outer: $gutter * 0.5) {
   
   // Enable to visually indicate the grid.
   $debug: false;
 
   // Calculate outer width from total, gutter & column.
-  $column: ($total_width - $gutter * 12) / 12;
+  $column: math.div($total_width - $gutter * 12, 12);
 
   @include reset-spacing;
 
@@ -12,15 +14,15 @@
   max-width: $total_width;
   position: relative;
   margin: 0 auto;
-  padding: 0 ($outer - $gutter / 2);
+  padding: 0 ($outer - $gutter * 0.5);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 
   & & {
     width: auto;
-    margin-left: -$gutter / 2;
-    margin-right: -$gutter / 2;
+    margin-left: -$gutter * 0.5;
+    margin-right: -$gutter * 0.5;
     padding: 0;
   }
 
@@ -36,12 +38,12 @@
 
       width: $span-width;
       box-sizing: border-box;
-      margin: 0 ($gutter / 2);
+      margin: 0 ($gutter * 0.5);
       position: relative;
       float: left;
 
       .width-one-half {
-        width: ($span-width - $gutter) / 2;
+        width: ($span-width - $gutter) * 0.5;
       }
 
       img {
@@ -53,7 +55,7 @@
 
   @for $count from 0 through 11 {
     &>.offset-#{$count} {
-      margin-left: ($column * $count + $gutter * $count + $gutter / 2) !important;
+      margin-left: ($column * $count + $gutter * $count + $gutter * 0.5) !important;
     }
   }
 
@@ -66,7 +68,7 @@
 
     @for $count from 0 through 11 {
       &>.tablet-offset-#{$count} {
-        margin-left: ($column * $count + $gutter / 2 * ($count * 2 + 1)) !important;
+        margin-left: ($column * $count + $gutter * 0.5 * ($count * 2 + 1)) !important;
       }
     }
   }
@@ -94,7 +96,7 @@
       float: none !important;
 
       .width-one-half {
-        width: ($total_width - $margin*2) / 2;
+        width: ($total_width - $margin*2) * 0.5;
       }
 
       img {

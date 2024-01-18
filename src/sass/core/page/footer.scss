@@ -1,3 +1,5 @@
+@use "sass:math";
+
 %page-footer {
 	background: $footer-background-color;
 	min-height: 30vh;
@@ -38,10 +40,10 @@
 					}
 
 					>ul {
-						margin-top: $default-text-size / 2;
+						margin-top: $default-text-size * 0.5;
 
 						>li+li {
-							margin-top: -$default-text-size / 3;
+							margin-top: math.div(-$default-text-size, 3);
 						}
 					}
 				}
@@ -51,7 +53,7 @@
 				padding: 0;
 
 				li {
-					margin-bottom: $default-text-size / 2;
+					margin-bottom: $default-text-size * 0.5;
 					list-style: none;
 					break-inside: avoid-column;
 					page-break-inside: avoid;
@@ -103,8 +105,8 @@
 			h4,
 			h5,
 			h6 {
-				margin-top: $default-text-size / 2;
-				margin-bottom: $default-text-size / 2;
+				margin-top: $default-text-size * 0.5;
+				margin-bottom: $default-text-size * 0.5;
 			}
 		}
 	}
