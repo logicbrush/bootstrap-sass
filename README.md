@@ -8,6 +8,13 @@ A SASS library for designing typical websites.
 - [Optional](./src/sass/optional): Optional modules.
 - [Platform Support](./src/sass/platform-support): Support for various CMS platforms.
 
+## Installation
+
+### PHP
+```
+composer require --dev logicbrush/bootstrap-sass
+```
+
 ## Getting Started
 
 Include either `core.scss` or a specific platform support module:
