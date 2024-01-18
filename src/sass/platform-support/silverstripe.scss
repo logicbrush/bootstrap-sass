@@ -2,8 +2,6 @@
 
 %typography {
 
-	@include flow-layout;
-
 	// These classes are used to align block elements.
 	.center {
 		@extend %flow-escape-center;

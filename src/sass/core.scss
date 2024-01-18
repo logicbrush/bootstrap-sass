@@ -2,28 +2,28 @@ $max-tablet-width: $min-desktop-width - 1;
 $max-phone-width: $min-tablet-width - 1;
 
 $default-margin-top: $default-text-size * $default-line-height * 0.75;
-$default-margin-bottom:  $default-text-size * $default-line-height * 0.75;
-    
+$default-margin-bottom: $default-text-size * $default-line-height * 0.75;
+
 @import "core/reset.scss";
 @import "core/responsive.scss";
 
-@import "core/layout/flow.scss";
-@import "core/layout/grid.scss";
+@import "core/layouts/flow.scss";
+@import "core/layouts/grid.scss";
 
-@import "core/typography/emphasis.scss";
-@import "core/typography/headings.scss";
+@import "core/typography/inline-styles.scss";
 @import "core/typography/icons.scss";
+@import "core/typography/paragraphs.scss";
+@import "core/typography/headings.scss";
 @import "core/typography/links.scss";
 @import "core/typography/lists.scss";
-@import "core/typography/paragraphs.scss";
 @import "core/typography/rules.scss";
 @import "core/typography/tables.scss";
 @import "core/typography/tabs.scss";
 
-@import "core/form/buttons.scss";
-@import "core/form/fieldsets.scss";
-@import "core/form/inputs.scss";
-@import "core/form/progress.scss";
+@import "core/forms/buttons.scss";
+@import "core/forms/fieldsets.scss";
+@import "core/forms/inputs.scss";
+@import "core/forms/progress.scss";
 
 @import "core/page/body.scss";
 @import "core/page/breadcrumbs.scss";
@@ -37,63 +37,69 @@ $default-margin-bottom:  $default-text-size * $default-line-height * 0.75;
 
 %typography {
 
-  font: $default-text-size $default-text-face, "Arial", sans-serif;
-  line-height: $default-line-height;
-  color: $default-text-color;
+	// Set layout to flow.
+	@include flow-layout;
 
-  %block-content {
+	// Set font defaults.
+	font: $default-text-size $default-text-face, "Arial", sans-serif;
+	line-height: $default-line-height;
+	color: $default-text-color;
 
-    margin-top: $default-margin-top;
-    margin-bottom: $default-margin-bottom;
-    box-sizing: border-box;
-    display: block;
-    float: none;
-  }
+	// Set margins on block content.
+	%block-content {
+		margin-top: $default-margin-top;
+		margin-bottom: $default-margin-bottom;
+		box-sizing: border-box;
+		display: block;
+		float: none;
+	}
 
 }
 
 
 // General print styling rules
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
+%theme-root {
+	@media print {
+		* {
+			background: transparent !important;
+			color: #000 !important;
+			box-shadow: none !important;
+			text-shadow: none !important;
+		}
 
-  pre,
-  blockquote {
-    page-break-inside: avoid;
-  }
+		pre,
+		blockquote {
+			page-break-inside: avoid;
+		}
 
-  thead {
-    display: table-header-group;
-  }
+		thead {
+			display: table-header-group;
+		}
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+		tr,
+		img {
+			page-break-inside: avoid;
+		}
 
-  img {
-    max-width: 100% !important;
-  }
+		img {
+			max-width: 100% !important;
+		}
 
-  @page {
-    margin: 0.5cm;
-  }
+		p,
+		h2,
+		h3 {
+			orphans: 3;
+			widows: 3;
+		}
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+		h2,
+		h3 {
+			page-break-after: avoid;
+		}
+	}
+}
 
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+@page {
+	margin: 0.5cm;
 }
 

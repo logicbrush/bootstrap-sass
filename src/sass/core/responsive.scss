@@ -1,100 +1,106 @@
 // mixin for auto-replacement of images with svg versions.
 @mixin svg-bg($name, $extension: png, $color: transparent, $position: 0 0, $repeat: no-repeat) {
-  background: url(../images/#{$name}.#{$extension}) $color $position $repeat;
-  background: none, url(../images/#{$name}.svg) $color $position $repeat;
+	background: url(../images/#{$name}.#{$extension}) $color $position $repeat;
+	background: none,
+	url(../images/#{$name}.svg) $color $position $repeat;
 }
 
 // show only on desktop.
 @mixin desktop-only {
-  @media screen and (max-width: $max-tablet-width) {
-    display: none !important;
-  }
+	@media screen and (max-width: $max-tablet-width) {
+		display: none !important;
+	}
 }
 
 @mixin on-desktop {
-  @media screen and (min-width: $min-desktop-width) {
-    @content;
-  }
-}
-
-.desktop-only {
-  @include desktop-only;
+	@media screen and (min-width: $min-desktop-width) {
+		@content;
+	}
 }
 
 // show on tablet or larger screens.
 @mixin tablet-or-larger {
-  @media screen and (max-width: $max-phone-width) {
-    display: none !important;
-  }
+	@media screen and (max-width: $max-phone-width) {
+		display: none !important;
+	}
 }
 
 @mixin on-tablet-or-larger {
-  @media screen and (min-width: $min-tablet-width) {
-    @content;
-  }
-}
-
-.tablet-or-larger {
-  @include tablet-or-larger;
+	@media screen and (min-width: $min-tablet-width) {
+		@content;
+	}
 }
 
 // show on tablet or smaller screens.
 @mixin tablet-or-smaller {
-  @media screen and (min-width: $min-desktop-width) {
-    display: none !important;
-  }
+	@media screen and (min-width: $min-desktop-width) {
+		display: none !important;
+	}
 }
 
 @mixin on-tablet-or-smaller {
-  @media screen and (max-width: $max-tablet-width) {
-    @content;
-  }
+	@media screen and (max-width: $max-tablet-width) {
+		@content;
+	}
 }
 
-.tablet-or-smaller {
-  @include tablet-or-smaller;
-}
 
 // show on tablets only.
 @mixin tablet-only {
-  @media screen and (min-width: $min-desktop-width) {
-    display: none !important;
-  }
-
-  @media screen and (max-width: $max-phone-width) {
-    display: none !important;
-  }
+	@media screen and (min-width: $min-desktop-width) {
+		display: none !important;
+	}
+	@media screen and (max-width: $max-phone-width) {
+		display: none !important;
+	}
 }
 
 @mixin on-tablet {
-  @media screen and (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
-    @content;
-  }
+	@media screen and (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
+		@content;
+	}
 }
 
-.tablet-only {
-  @include tablet-only;
-}
 
 // show on phones only.
 @mixin phone-only {
-  @media screen and (min-width: $min-tablet-width) {
-    display: none !important;
-  }
+	@media screen and (min-width: $min-tablet-width) {
+		display: none !important;
+	}
 }
 
 @mixin on-phone {
-  @media screen and (max-width: $max-phone-width) {
-    @content;
-  }
-}
-
-.phone-only {
-  @include phone-only;
+	@media screen and (max-width: $max-phone-width) {
+		@content;
+	}
 }
 
 @mixin touch-devices {
-  @media (hover: none) {
-    @content;
-  }
+	@media (hover: none) {
+		@content;
+	}
+}
+
+%theme-root {
+
+	.desktop-only {
+		@include desktop-only;
+	}
+
+	.tablet-or-larger {
+		@include tablet-or-larger;
+	}
+
+	.tablet-or-smaller {
+		@include tablet-or-smaller;
+	}
+
+	.tablet-only {
+		@include tablet-only;
+	}
+
+	.phone-only {
+		@include phone-only;
+	}
+
 }
