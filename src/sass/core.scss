@@ -35,15 +35,19 @@ $default-margin-bottom: $default-text-size * $default-line-height * 0.75;
 @import "core/page/menu.scss";
 @import "core/page/sidebar.scss";
 
-%typography {
-
-	// Set layout to flow.
-	@include flow-layout;
-
+%typography, %theme-root {
+	
 	// Set font defaults.
 	font: $default-text-size $default-text-face, "Arial", sans-serif;
 	line-height: $default-line-height;
 	color: $default-text-color;
+	
+}
+
+%typography {
+
+	// Set layout to flow.
+	@include flow-layout;
 
 	// Set margins on block content.
 	%block-content {
