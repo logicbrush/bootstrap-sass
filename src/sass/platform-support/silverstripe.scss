@@ -107,17 +107,17 @@
 
 		#page-header {
 			#main-menu {
-				@extend %main-navigation;
+				@extend %page-menu;
 			}
 
 			@extend %page-header;
 		}
 
 		#main-content {
-			@extend %main-content;
+			@extend %page-content;
 
 			.side-bar {
-				@extend %sidebar;
+				@extend %page-sidebar;
 			}
 		}
 

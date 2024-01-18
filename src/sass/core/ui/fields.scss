@@ -1,6 +1,6 @@
-%text,
-%select,
-%textarea {
+%ui-text,
+%ui-select,
+%ui-textarea {
 	width: 100%;
 	box-sizing: border-box;
 	margin: 0;
@@ -17,15 +17,15 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
-		@extend %text;
+		@extend %ui-text;
 	}
 
 	select {
-		@extend %select;
+		@extend %ui-select;
 	}
 
 	textarea {
-		@extend %textarea;
+		@extend %ui-textarea;
 	}
 
 	input[type=checkbox],

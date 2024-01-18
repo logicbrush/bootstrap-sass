@@ -1,10 +1,10 @@
-%fieldset {
+%ui-fieldset {
   padding: 0;
   border: none;
 }
 
 %form, %typography {
   fieldset {
-    @extend %fieldset;
+    @extend %ui-fieldset;
   }
 }
