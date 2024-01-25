@@ -1,3 +1,15 @@
+@mixin with-menu-button() {
+	&>.grid-aligned {
+		.logo-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+
 %page-header {
 
 	background: rgba($header-background-color, 1);
@@ -67,14 +79,10 @@
 	}
 
 	@include on-tablet-or-smaller {
-		>.grid-aligned {
-			.logo-container {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
-			}
-		}
+		@include with-menu-button;
+	}
+	&.with-menu-button {
+		@include with-menu-button;
 	}
 
 
