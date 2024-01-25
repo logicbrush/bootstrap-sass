@@ -20,7 +20,7 @@
 	$debug: false;
 
 	// Calculate outer width from total, gutter & column.
-	$column: math.div($total_width - $gutter * 12, 12);
+	$column: math.div($total_width - $gutter * 11 - $outer * 2, 12);
 
 	@include reset-spacing;
 
