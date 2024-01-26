@@ -4,8 +4,26 @@
     @extend %block-content;
   }
 
-  p {
+  p, .p {
     @extend %paragraph;
+  }
+
+  %blockquote {
+	@extend %block-content;
+	border-left: 5px solid $primary-hilight-color;
+	padding-left: 1em;
+  }
+
+  %blockquote-citation {
+	@extend %block-content;
+	font-style: italic;
+  }
+
+  blockquote, .blockquote {
+	@extend %blockquote;
+	cite, .cite {
+		@extend %blockquote-citation;
+	}
   }
   
 }
