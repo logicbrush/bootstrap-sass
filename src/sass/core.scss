@@ -59,11 +59,6 @@ $default-margin-bottom: $default-text-size * $default-line-height * 0.75;
 		list-style: none;
 		display: block;
 		float: none;
-
-		// Remove top margin for first in container.
-		&:first-child {
-			margin-top: 0;
-		}
 		
 	}
 
