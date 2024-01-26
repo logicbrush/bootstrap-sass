@@ -69,17 +69,31 @@
 
 	// BUTTONS
 	.wp-block-buttons {
+
 		@extend %block-content;
+
+		&.is-content-justification-left {
+			text-align: left;
+		}
+		&.is-content-justification-center {
+			text-align: center;
+		}
+		&.is-content-justification-right {
+			text-align: right;
+		}
+
 		.wp-element-button {
 			@extend %ui-button;
 		}
+
 	}
 
 }
 
 %theme-root {
 
-	.entry-content, .typography {
+	.entry-content,
+	.typography {
 		@extend %typography;
 	}
 
