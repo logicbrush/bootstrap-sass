@@ -51,11 +51,18 @@ $default-margin-bottom: $default-text-size * $default-line-height * 0.75;
 
 	// Set margins on block content.
 	%block-content {
+
 		margin-top: $default-margin-top;
 		margin-bottom: $default-margin-bottom;
 		box-sizing: border-box;
 		display: block;
 		float: none;
+
+		// Remove top margin for first in container.
+		&:first-child {
+			margin-top: 0 !important;
+		}
+		
 	}
 
 }

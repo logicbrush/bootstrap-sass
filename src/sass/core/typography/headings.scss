@@ -4,10 +4,7 @@
 
 		@extend %block-content;
 
-		*+& {
-			margin-top: $default-margin-top * 1.25 !important;
-		}
-
+		margin-top: $default-margin-top * 1.25;
 		font-family: $default-heading-face;
 		color: $default-heading-color;
 		font-weight: $default-heading-weight;
