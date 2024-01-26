@@ -1,16 +1,15 @@
 %typography {
  
   %list, ul, ol {
+
+	@extend %block-content;
+
     padding-left: 2.5em;
 
     li {
       display: list-item;
     }
 
-    ul, ol {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
   }
 
   ul li {
