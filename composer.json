@@ -14,5 +14,11 @@
             "email": "nicholas.hamma@logicbrush.com"
         }
     ],
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-release/1.0": "1.0.x-dev"
+        }
+    }
+
 }

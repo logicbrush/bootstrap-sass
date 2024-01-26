@@ -2,7 +2,45 @@
 
 %typography {
 
+	@include flow-layout();
 
+	// // These classes are used to align block elements.
+	// .center {
+	// 	@extend %flow-escape-content-center;
+	// }
+
+	// .leftAlone {
+	// 	@extend %flow-escape-content-left;
+	// }
+
+	// .alightleft {
+	// 	@extend %flow-escape-content-left-wrapped;
+	// }
+
+	// .rightAlone {
+	// 	@extend %flow-escape-content-right;
+	// }
+
+	// .alignright {
+	// 	@extend %flow-escape-content-right-wrapped;
+	// }
+
+	// // These classes are used for text alignment.
+	// .text-right {
+	// 	@extend %flow-align-content-right;
+	// }
+
+	// .text-left {
+	// 	@extend %flow-align-content-left;
+	// }
+
+	// .text-center {
+	// 	@extend %flow-align-content-center;
+	// }
+
+	// .text-justify {
+	// 	@extend %flow-justify-content;
+	// }
 
 	// Images can be annotated with captions.
 	.captionImage {
@@ -27,6 +65,11 @@
 	.btn-toolbar,
 	.content-block {
 		@extend %block-content;
+	}
+
+	// BUTTONS
+	.wp-element-button {
+		@extend %ui-button;
 	}
 
 
