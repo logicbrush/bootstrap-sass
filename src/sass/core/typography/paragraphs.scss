@@ -22,8 +22,13 @@
   blockquote, .blockquote {
 	@extend %blockquote;
 	cite, .cite {
+
 		@extend %blockquote-citation;
 		text-align: right;
+
+		&::before {
+			content: '— ';
+		}
 	}
   }
   
