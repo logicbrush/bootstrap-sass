@@ -97,7 +97,7 @@
 
 %theme-root {
 
-	.typography {
+	.entry-content, .typography {
 		@extend %typography;
 	}
 
