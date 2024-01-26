@@ -1,18 +1,26 @@
 %typography {
  
-  %list, ul, ol {
-
+  %list {
 	@extend %block-content;
+    padding-left: 1.5em !important;
 
-    padding-left: 2.5em;
+	& %list {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+  }
 
-    li {
-      display: list-item;
-    }
+  %list-item {
+	display: list-item;
+  }
 
+  ul, .ul, ol, .ol {
+	@extend %list;
   }
 
   ul li {
+
+	@extend %list-item;
     list-style-type: disc;
 
     li {
@@ -25,7 +33,9 @@
   }
 
   ol li {
-    list-style-type: decimal;
+
+	@extend %list-item;
+	list-style-type: decimal;
 
     li {
       list-style-type: lower-alpha;
