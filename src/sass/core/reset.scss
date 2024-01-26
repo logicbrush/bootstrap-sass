@@ -13,7 +13,19 @@
   color: inherit;
 }
 
-%theme-root {
+// Set margins on block content.
+%typography {
+	%block-content {
+		margin-top: $default-margin-top;
+		margin-bottom: $default-margin-bottom;
+		box-sizing: border-box;
+		list-style: none;
+		display: block;
+		float: none;
+	}
+}
+
+%theme-root {	
 
   // inline elements.
   a, abbr, acronym, audio, b, bdi, bdo, big, br, button, canvas, cite, code, data, datalist, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, mark, meter, noscript, object, output, picture, progress, q, ruby, s, samp, select, slot, small, span, strong, sub, sup, svg, template, textarea, time, u, tt, var, video, wbr {
