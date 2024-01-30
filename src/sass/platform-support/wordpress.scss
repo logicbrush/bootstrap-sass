@@ -13,17 +13,17 @@
 	// 	@extend %flow-escape-content-left;
 	// }
 
-	// .alightleft {
-	// 	@extend %flow-escape-content-left-wrapped;
-	// }
+	.alightleft {
+		@extend %flow-escape-content-left-wrapped;
+	}
 
 	// .rightAlone {
 	// 	@extend %flow-escape-content-right;
 	// }
 
-	// .alignright {
-	// 	@extend %flow-escape-content-right-wrapped;
-	// }
+	.alignright {
+		@extend %flow-escape-content-right-wrapped;
+	}
 
 	// // These classes are used for text alignment.
 	// .text-right {
