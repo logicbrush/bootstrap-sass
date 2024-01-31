@@ -33,10 +33,10 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	& & {
+	& .grid-aligned {
+		margin-left: -$outer !important;
+		margin-right: -$outer !important;
 		width: auto;
-		margin-left: -$gutter * 0.5;
-		margin-right: -$gutter * 0.5;
 		padding: 0;
 	}
 
