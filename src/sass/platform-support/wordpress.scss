@@ -4,10 +4,9 @@
 
 	@include flow-layout();
 
-	// // These classes are used to align block elements.
-	// .center {
-	// 	@extend %flow-escape-content-center;
-	// }
+	.aligncenter {
+		@extend %flow-escape-content-center;
+	}
 
 	// .leftAlone {
 	// 	@extend %flow-escape-content-left;
