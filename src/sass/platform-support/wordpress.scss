@@ -6,6 +6,7 @@
 
 	.aligncenter {
 		@extend %flow-escape-content-center;
+		text-align: center;
 	}
 
 	// .leftAlone {
