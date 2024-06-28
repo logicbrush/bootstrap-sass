@@ -1,6 +1,5 @@
 @use "sass:math";
 
-///
 /// A mixin to create a twelve-column, grid-based layout.
 /// 
 /// Specify the overall width and gutter width and column sizes will be
@@ -8,12 +7,9 @@
 /// px); don't use percentages..
 /// 
 /// @param $total_width The overall width of the grid.
-/// 
 /// @param $gutter The width of the gutter between columns.
-/// 
 /// @param $outer Added padding to the left of the first column and right of the
 /// last column. Defaults to 1/2 $gutter.
-/// 
 @mixin grid-layout($total_width, $gutter, $outer: $gutter * 0.5) {
 
 	// Enable to visually indicate the grid.
