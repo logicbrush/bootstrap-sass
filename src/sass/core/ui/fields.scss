@@ -10,13 +10,20 @@
 	padding: 10px 15px;
 	margin-bottom: 15px;
 	background: #fff;
+
+	&::-webkit-datetime-edit {
+		margin-top: -4px;
+		margin-bottom: -8px;
+	}
+
 }
 
 %theme-root {
 
 	input[type="text"],
 	input[type="email"],
-	input[type="password"] {
+	input[type="password"],
+	input[type="date"] {
 		@extend %ui-text;
 	}
 
