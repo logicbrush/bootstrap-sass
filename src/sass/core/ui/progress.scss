@@ -1,3 +1,25 @@
+$progress-label-width: 140px;
+$progress-button-width: 35px;
+
+%progress-tick {
+	display: none;
+}
+
+%progress-label {
+
+	position: absolute;
+	bottom: 120%;
+	color: mix($default-text-color, $default-background-color, 75%);
+	transform: translateX(-($progress-label-width - $progress-button-width)/2);
+	width: $progress-label-width;
+	font-size: $default-text-size * 0.75;
+	text-align: center;
+
+	@include on-tablet-or-smaller {
+		display: none;
+	}
+}
+
 %theme-root {
 	.userform-progress {
 		.progress-description {
@@ -10,45 +32,44 @@
 			max-width: 100%;
 		}
 
-		.step-button-jump {
-			margin: 0;
-			padding: 0;
-			width: 35px;
-			height: 35px;
-			opacity: 1;
-			border-radius: 50%;
-			background: mix($primary-hilight-color, $default-background-color, 30%);
-			font-size: $default-text-size * 0.9;
+		.step-button-wrapper {
 
-			.tick {
-				display: none;
-			}
+			width: $progress-button-width;
+			height: $progress-button-width;
 
-			.label {
-				position: absolute;
-				bottom: 120%;
-				color: mix($default-text-color, $default-background-color, 50%);
-				transform: translateX(-50%);
-				width: 140px;
-				font-size: $default-text-size * 0.75;
+			.step-button-jump {
+				margin: 0;
+				padding: 0;
+				width: $progress-button-width;
+				height: $progress-button-width;
+				opacity: 1;
+				border-radius: 50%;
+				background: mix($primary-hilight-color, $default-background-color, 30%);
+				font-size: $default-text-size * 0.9;
 
-				@include on-tablet-or-smaller {
-					display: none;
+				.tick,
+				&~.tick {
+					@extend %progress-tick;
+				}
+
+				.label,
+				&~.label {
+					@extend %progress-label;
 				}
 			}
-		}
 
-		.step-button-wrapper.viewed .step-button-jump {
-			background: $primary-hilight-color;
-		}
-
-		.step-button-wrapper.viewed:not(.current) .step-button-jump {
-			.number {
-				display: none;
+			&.viewed .step-button-jump {
+				background: $primary-hilight-color;
 			}
 
-			.tick {
-				display: block;
+			&.viewed:not(.current) {
+				.number {
+					display: none;
+				}
+
+				.tick {
+					display: block;
+				}
 			}
 		}
 
