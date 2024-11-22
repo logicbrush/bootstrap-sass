@@ -1,7 +1,9 @@
 {
     "name": "logicbrush/bootstrap-sass",
     "description": "Provides a starting point to style your app using sass",
-    "keywords": ["sass"],
+    "keywords": [
+        "sass"
+    ],
     "homepage": "https://github.com/logicbrush/bootstrap-sass",
     "license": "BSD-3-Clause",
     "authors": [
@@ -17,8 +19,8 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
+            "dev-release/2.0": "2.0.x-dev",
             "dev-release/1.0": "1.0.x-dev"
         }
     }
-
 }
