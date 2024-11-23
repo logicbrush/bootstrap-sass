@@ -33,24 +33,45 @@
 	--bs-default-heading-font-size: calc(var(--bs-default-font-size) * 1.5);
 	--bs-default-heading-line-height: var(--bs-default-line-height);
 
+	--bs-default-vertical-spacing: var(--bs-default-font-size);
+	--bs-default-horizontal-spacing: var(--bs-default-font-size);
+
+	/// Debug unstyled elements.
+	// * { border: 1px solid red; }
+
 	/// Block elements.
 	%bs-block-base {
 		display: block;
-		margin: 0 auto;
 		padding: 0;
+		margin: 0;
 		border: 0;
 	}
-	div,blockquote { @extend %bs-block-base; }
+	address,article,aside,blockquote,canvas,dd,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,li,main,nav,noscript,ol,p,pre,section,table,tfoot,ul,video { 
+		@extend %bs-block-base; 
+	}
 
 	/// Inline elements.
 	%bs-inline-base {
 		@extend %bs-block-base;
 		display: inline;
 	}
-	span { @extend %bs-inline-base; }
+	a,abbr,acronym,b,bdo,big,br,button,cite,code,dfn,em,i,img,input,kbd,label,map,object,output,q,samp,script,select,small,span,strong,sub,sup,svg,textarea,time,tt,var { 
+		@extend %bs-inline-base; 
+	}
+
+	// Typography.
+	%bs-typography-base {
+		margin-block-start: calc(var(--bs-default-vertical-spacing));
+		margin-block-end: calc(var(--bs-default-vertical-spacing));
+	}
+	/// Paragraphs.
+	p {
+		@extend %bs-typography-base;
+	}
 
 	// Headings.
 	%bs-heading-base {
+		@extend %bs-typography-base;
 		font-family: var(--bs-default-heading-font-family); 
 		font-weight: var(--bs-default-heading-font-weight);
 		font-style: var(--bs-default-heading-font-style);
@@ -66,13 +87,16 @@
 
 	/// Lists.
 	%bs-list-item-base {
-		@extend %bs-block-base;
 		display: list-item;
 	}
 	li { @extend %bs-list-item-base; }
+	%bs-list-base {
+		@extend %bs-typography-base;
+	}
+	ul,ol { @extend %bs-list-base; }
 
 	/// Links.
-	%bs-link-base { 
+	%bs-link-base {
 		color: var(--bs-default-accent-color-1);
 	}
 	a { @extend %bs-link-base; }
