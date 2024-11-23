@@ -1,0 +1,208 @@
+@use '../base.scss';
+
+%bs-grid-support {
+
+	--bs-default-grid-total-width: 100%;
+	--bs-default-grid-gutter-width: calc(var(--bs-default-grid-total-width) / 20);
+	--bs-default-grid-outer-width: calc(var(--bs-default-grid-gutter-width) / 2);
+
+	%bs-grid-layout-base {
+
+		--bs-grid-total-width: var(--bs-default-grid-total-width);
+		--bs-grid-gutter-width: var(--bs-default-grid-gutter-width);
+		--bs-grid-outer-width: var(--bs-default-grid-outer-width);
+
+		@extend %bs-block-base;
+
+		--bs-grid-calculated-column-width: calc(
+		(
+			var(--bs-grid-total-width) - 
+			var(--bs-grid-gutter-width) * 11 - 
+			var(--bs-grid-outer-width) * 2 
+		) / 12
+		);
+		--bs-grid-calculated-outer-padding-width: calc(
+		var(--bs-grid-outer-width) - 
+		var(--bs-grid-gutter-width) / 2
+		);
+
+		box-sizing: border-box;
+		padding-left: var(--bs-grid-calculated-outer-padding-width);
+		padding-right: var(--bs-grid-calculated-outer-padding-width);
+		width: var(--bs-grid-total-width);
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-wrap: wrap;
+
+		@for $count from 1 through 12 {
+			&>.span-#{$count} {
+
+				@extend %bs-block-base;
+
+				box-sizing: border-box;
+				margin-left: calc(var(--bs-grid-gutter-width) * 0.5);
+				margin-right: calc(var(--bs-grid-gutter-width) * 0.5);
+				width: calc(
+					var(--bs-grid-calculated-column-width) * #{$count} + 
+					var(--bs-grid-gutter-width) * #{$count - 1}
+				);
+
+				position: relative;
+				float: left;
+
+			}
+		}
+
+		.span-all { @extend .span-12; }
+	}
+
+	.grid-aligned {
+		@extend %bs-grid-layout-base;
+	}
+	
+}
+
+
+
+// @use "sass:math";
+
+// /// A mixin to create a twelve-column, grid-based layout.
+// /// 
+// /// Specify the overall width and gutter width and column sizes will be
+// /// automatically calculated for you.  Works best with absolute dimensions (vw,
+// /// px); don't use percentages..
+// /// 
+// /// @param $total_width The overall width of the grid.
+// /// @param $gutter The width of the gutter between columns.
+// /// @param $outer Added padding to the left of the first column and right of the
+// /// last column. Defaults to 1/2 $gutter.
+// @mixin grid-layout($total_width, $gutter, $outer: $gutter * 0.5) {
+
+// 	// Enable to visually indicate the grid.
+// 	$debug: false;
+
+// 	// Calculate outer width from total, gutter & column.
+// 	$column: math.div($total_width - $gutter * 11 - $outer * 2, 12);
+
+// 	@include reset-spacing;
+
+// 	box-sizing: border-box;
+// 	max-width: $total_width;
+// 	position: relative;
+// 	margin: 0 auto;
+// 	padding: 0 ($outer - $gutter * 0.5);
+// 	width: 100%;
+// 	display: flex;
+// 	flex-wrap: wrap;
+
+// 	& .grid-aligned {
+// 		margin-left: -$outer !important;
+// 		margin-right: -$outer !important;
+// 		width: auto;
+// 		padding: 0;
+// 	}
+
+// 	@for $count from 1 through 12 {
+// 		$span-width: $column * $count + $gutter * $count - $gutter;
+
+// 		&>.span-#{$count},
+// 		&>.span-all {
+// 			@include reset-spacing;
+
+// 			@if $debug {
+// 				background: rgba(255, 0, 0, 0.1);
+// 			}
+
+// 			width: $span-width;
+// 			box-sizing: border-box;
+// 			margin: 0 ($gutter * 0.5);
+// 			position: relative;
+// 			float: left;
+
+// 			.width-one-half {
+// 				width: ($span-width - $gutter) * 0.5;
+// 			}
+
+// 			img {
+// 				max-width: 100%;
+// 				height: auto;
+// 			}
+// 		}
+// 	}
+
+// 	@for $count from 0 through 11 {
+// 		&>.offset-#{$count} {
+// 			margin-left: ($column * $count + $gutter * $count + $gutter * 0.5) !important;
+// 		}
+// 	}
+
+// 	@media screen and (min-width: $min-tablet-width) and (max-width: $min-desktop-width - 1) {
+// 		@for $count from 1 through 12 {
+
+// 			&>.tablet-span-all,
+// 			&>.tablet-span-#{$count} {
+// 				width: $column * $count + $gutter * ($count - 1);
+// 			}
+// 		}
+
+// 		@for $count from 0 through 11 {
+// 			&>.tablet-offset-#{$count} {
+// 				margin-left: ($column * $count + $gutter * 0.5 * ($count * 2 + 1)) !important;
+// 			}
+// 		}
+// 	}
+
+// 	&:after {
+// 		content: ' ';
+// 		display: block;
+// 		clear: left;
+// 	}
+// }
+
+// @mixin ungrid-layout($total_width, $margin, $spacing: 1em) {
+// 	display: block !important;
+
+// 	@for $count from 1 through 12 {
+
+// 		&>.span-all,
+// 		&>.span-#{$count},
+// 		&>.tablet-span-all,
+// 		&>.tablet-span-#{$count} {
+// 			width: auto !important;
+// 			margin-right: $margin !important;
+// 			margin-left: $margin !important;
+
+// 			// The following lines are to allow space for the iPhone X notch
+// 			// unquote is used so that the sass compiler does not compile the css max rule
+// 			margin-right: unquote("max(env(safe-area-inset-right), #{$margin}) !important");
+// 			margin-left: unquote("max(env(safe-area-inset-left), #{$margin}) !important");
+// 			float: none !important;
+
+// 			.width-one-half {
+// 				width: ($total_width - $margin*2) * 0.5;
+// 			}
+
+// 			img {
+// 				max-width: 100%;
+// 				height: auto;
+// 			}
+
+// 			& & {
+// 				margin: 0 !important;
+// 			}
+// 		}
+
+// 		& & {
+// 			margin: 0 !important;
+// 		}
+
+// 		*+.span-all,
+// 		*+.span-#{$count},
+// 		*+.tablet-span-all,
+// 		*+.tablet-span-#{$count} {
+// 			margin-top: $spacing !important;
+// 		}
+// 	}
+// }
+

@@ -1,0 +1,80 @@
+/// @extend this at the root of your theme.
+%bs-support {
+
+	/// The default foreground color.
+	--bs-default-foreground-color: black;
+	color: var(--bs-default-foreground-color);
+
+	/// The default background color.	
+	--bs-default-background-color: white;
+	background: var(--bs-default-background-color);
+
+	/// Accent colors.
+	--bs-default-accent-color-1: blue;
+	--bs-default-accent-color-2: var(--bs-default-accent-color-1);
+	--bs-default-accent-color-3: var(--bs-default-accent-color-2);
+
+	/// The default paragraph font.	
+	--bs-default-font-family: 'Arial', sans-serif;
+	--bs-default-font-weight: normal;
+	--bs-default-font-style: normal;
+	--bs-default-font-size: 18px;
+	--bs-default-line-height: 1.2;
+	font-family: var(--bs-default-font-family); 
+	font-weight: var(--bs-default-font-weight);
+	font-style: var(--bs-default-font-style);
+	font-size: var(--bs-default-font-size);
+	line-height: var(--bs-default-line-height);
+
+	/// The default heading font.	
+	--bs-default-heading-font-family: var(--bs-default-font-family);
+	--bs-default-heading-font-weight: bold;
+	--bs-default-heading-font-style: normal;
+	--bs-default-heading-font-size: calc(var(--bs-default-font-size) * 1.5);
+	--bs-default-heading-line-height: var(--bs-default-line-height);
+
+	/// Block elements.
+	%bs-block-base {
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+		border: 0;
+	}
+	div,blockquote { @extend %bs-block-base; }
+
+	/// Inline elements.
+	%bs-inline-base {
+		@extend %bs-block-base;
+		display: inline;
+	}
+	span { @extend %bs-inline-base; }
+
+	// Headings.
+	%bs-heading-base {
+		font-family: var(--bs-default-heading-font-family); 
+		font-weight: var(--bs-default-heading-font-weight);
+		font-style: var(--bs-default-heading-font-style);
+		font-size: var(--bs-default-heading-font-size);
+		line-height: var(--bs-default-heading-line-height);
+	}
+	@for $i from 1 through 6 {
+		h#{$i} { 
+			@extend %bs-heading-base; 
+			font-size: calc(var(--bs-default-heading-font-size) / 1.#{($i - 1)});
+		}
+	}
+
+	/// Lists.
+	%bs-list-item-base {
+		@extend %bs-block-base;
+		display: list-item;
+	}
+	li { @extend %bs-list-item-base; }
+
+	/// Links.
+	%bs-link-base { 
+		color: var(--bs-default-accent-color-1);
+	}
+	a { @extend %bs-link-base; }
+
+}
