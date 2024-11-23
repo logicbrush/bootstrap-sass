@@ -55,7 +55,7 @@
 		@extend %bs-block-base;
 		display: inline;
 	}
-	a,abbr,acronym,b,bdo,big,br,button,cite,code,dfn,em,i,img,input,kbd,label,map,object,output,q,samp,script,select,small,span,strong,sub,sup,svg,textarea,time,tt,var { 
+	a,abbr,acronym,b,bdo,big,br,button,cite,code,dfn,em,i,img,input,kbd,label,map,object,output,q,samp,select,small,span,strong,sub,sup,svg,textarea,time,tt,var { 
 		@extend %bs-inline-base; 
 	}
 
