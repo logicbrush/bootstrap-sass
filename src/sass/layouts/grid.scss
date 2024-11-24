@@ -15,15 +15,15 @@
 		@extend %bs-block-base;
 
 		--bs-grid-calculated-column-width: calc(
-		(
-			var(--bs-grid-total-width) - 
-			var(--bs-grid-gutter-width) * 11 - 
-			var(--bs-grid-outer-width) * 2 
-		) / 12
+			(
+				var(--bs-grid-total-width) - 
+				var(--bs-grid-gutter-width) * 11 - 
+				var(--bs-grid-outer-width) * 2 
+			) / 12
 		);
 		--bs-grid-calculated-outer-padding-width: calc(
-		var(--bs-grid-outer-width) - 
-		var(--bs-grid-gutter-width) / 2
+			var(--bs-grid-outer-width) - 
+			var(--bs-grid-gutter-width) / 2
 		);
 
 		box-sizing: border-box;
@@ -65,7 +65,16 @@
 	}
 
 	.bs-grid-layout {
+
 		@extend %bs-grid-layout-base;
+
+		// When you embed a grid-layout in a grid-layout, its margins collapse
+		// so everything continues to line up.
+		.bs-grid-layout {
+			margin-left: calc(var(--bs-default-grid-outer-width) * -1) !important;
+			margin-right: calc(var(--bs-default-grid-outer-width) * -1) !important;
+		}
+		
 	}
 	
 }
