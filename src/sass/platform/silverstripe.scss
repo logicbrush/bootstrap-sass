@@ -1,0 +1,146 @@
+@use '../base.scss';
+
+%bs-silverstripe-support {
+
+	/// Text alignment.
+	.text-left { text-align: left; }
+	.text-center { text-align: center; }
+	.text-right { text-align: right; }
+	.text-justify { text-align: justify; }
+
+}
+
+// %typography {
+
+// 	@include flow-layout();
+
+// 	// These classes are used to align block elements.
+// 	.center {
+// 		@extend %flow-escape-content-center;
+// 	}
+
+// 	.leftAlone {
+// 		@extend %flow-escape-content-left;
+// 	}
+
+// 	.left {
+// 		@extend %flow-escape-content-left-wrapped;
+// 	}
+
+// 	.rightAlone {
+// 		@extend %flow-escape-content-right;
+// 	}
+
+// 	.right {
+// 		@extend %flow-escape-content-right-wrapped;
+// 	}
+
+// 	// These classes are used for text alignment.
+// 	.text-right {
+// 		@extend %flow-align-content-right;
+// 	}
+
+// 	.text-left {
+// 		@extend %flow-align-content-left;
+// 	}
+
+// 	.text-center {
+// 		@extend %flow-align-content-center;
+// 	}
+
+// 	.text-justify {
+// 		@extend %flow-justify-content;
+// 	}
+
+// 	// Images can be annotated with captions.
+// 	.captionImage {
+// 		&>img {
+// 			@extend %flow-escape-content-center;
+// 			@extend %block-content;
+// 			max-width: 100% !important;
+// 			margin-top: 0;
+// 		}
+
+// 		&>p.caption {
+// 			@extend %flow-align-content-center;
+// 			@extend %paragraph;
+// 			font-size: $default-text-size * 0.85 !important;
+// 			max-width: 100% !important;
+// 			margin-left: 0;
+// 			margin-right: 0;
+// 		}
+// 	}
+
+// 	.Actions,
+// 	.btn-toolbar,
+// 	.content-block {
+// 		@extend %block-content;
+// 	}
+
+// 	.rollup-page-navigation-tabs {
+// 		&>ul {
+// 			@extend %tabs;
+
+// 			background: none;
+
+// 			&>li {
+// 				@extend %tab;
+
+// 				a {
+// 					background: none !important;
+// 				}
+
+// 				&.active {
+// 					@extend %tab-active;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// }
+
+// %theme-root {
+
+// 	.typography {
+// 		@extend %typography;
+// 	}
+
+// 	.grid-aligned {
+// 		@include on-tablet-or-larger {
+// 			@include grid-layout(100%, 5%, 5%);
+// 		}
+
+// 		@include on-phone {
+// 			@include ungrid-layout(100%, 5%);
+// 		}
+// 	}
+
+// 	#page-body {
+
+// 		@extend %page-body;
+
+// 		#page-header {
+
+// 			@extend %page-header;
+
+// 			#main-menu {
+// 				@extend %page-menu;
+// 			}
+
+// 		}
+
+// 		#main-content {
+// 			@extend %page-content;
+
+// 			.side-bar {
+// 				@extend %page-sidebar;
+// 			}
+
+// 		}
+
+// 		#page-footer {
+// 			@extend %page-footer;
+// 		}
+
+// 	}
+// }

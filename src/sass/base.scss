@@ -96,12 +96,24 @@
 	%bs-list-base {
 		@extend %bs-typography-base;
 	}
-	ul,ol { @extend %bs-list-base; }
+	ul,ol { 
+		@extend %bs-list-base; 
+		margin-left: calc(var(--bs-default-horizontal-spacing) * 2);
+	}
+
+	/// Blockquotes
+	%bs-blockquote-base {
+		margin: 
+			calc(var(--bs-default-vertical-spacing) * 2)
+			calc(var(--bs-default-horizontal-spacing) * 2)
+		;
+		font-size: calc(var(--bs-default-font-size) * 1.2);
+	}
+	blockquote { @extend %bs-blockquote-base; }
 
 	/// Links.
 	%bs-link-base {
 		color: var(--bs-default-accent-color-1);
 	}
 	a { @extend %bs-link-base; }
-
 }
