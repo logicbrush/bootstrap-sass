@@ -36,7 +36,7 @@
 		flex-wrap: wrap;
 
 		@for $count from 1 through 12 {
-			&>.span-#{$count} {
+			.bs-span-#{$count} {
 
 				@extend %bs-block-base;
 
@@ -54,10 +54,17 @@
 			}
 		}
 
-		.span-all { @extend .span-12; }
+		.bs-span-all { @extend .bs-span-12; }
+		.bs-span-three-quarters { @extend .bs-span-9; }
+		.bs-span-two-thirds { @extend .bs-span-8; }
+		.bs-span-one-half { @extend .bs-span-6; }
+		.bs-span-one-third { @extend .bs-span-4; }
+		.bs-span-one-quarter { @extend .bs-span-3; }
+		.bs-span-one-eigth { @extend .bs-span-2; }
+
 	}
 
-	.grid-aligned {
+	.bs-grid-layout {
 		@extend %bs-grid-layout-base;
 	}
 	
