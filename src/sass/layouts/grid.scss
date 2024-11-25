@@ -6,11 +6,15 @@
 	--bs-default-grid-spacing: calc(var(--bs-default-grid-total-width) / 20);
 	--bs-default-grid-margin: calc(var(--bs-default-grid-spacing) / 2);
 
+	/// Set this to 1 to conditionally disable the grid.
+	--bs-default-disable-grid: 0;	
+
 	%bs-grid-layout-base {
 
 		--bs-grid-total-width: var(--bs-default-grid-total-width);
 		--bs-grid-spacing: var(--bs-default-grid-spacing);
 		--bs-grid-margin: var(--bs-default-grid-margin);
+		--bs-disable-grid: var(--bs-default-disable-grid);
 
 		@extend %bs-block-base;
 
@@ -43,14 +47,17 @@
 				box-sizing: border-box;
 				margin-left: calc(var(--bs-grid-spacing) * 0.5);
 				margin-right: calc(var(--bs-grid-spacing) * 0.5);
-				width: calc(
-					var(--bs-grid-calculated-column-width) * #{$count} + 
-					var(--bs-grid-spacing) * #{$count - 1}
-				);
-				max-width: 100%;
-
 				position: relative;
-				float: left;
+				max-width: 100%;
+				width: 100%;
+
+				width: max(
+					calc(
+						var(--bs-grid-calculated-column-width) * #{$count} + 
+						var(--bs-grid-spacing) * #{$count - 1}
+					),
+					var(--bs-disable-grid) * 100%
+				);
 
 			}
 		}
