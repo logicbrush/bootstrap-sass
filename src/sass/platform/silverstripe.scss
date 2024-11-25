@@ -2,10 +2,40 @@
 
 %bs-silverstripe-support {
 
+	/// Block alignment.
+	.leftAlone {
+		@extend %bs-block-base;
+		@extend %bs-typography-base;
+		margin-left: 0;
+		margin-right: auto;
+	}
+	.rightAlone {
+		@extend %bs-block-base;
+		@extend %bs-typography-base;
+		margin-left: auto;
+		margin-right: 0;
+	}
+	.center {
+		@extend %bs-block-base;
+		@extend %bs-typography-base;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.left {
+		margin-right: var(--bs-default-horizontal-spacing);
+		float: left; 
+		clear: left; 
+	}
+	.right { 
+		margin-left: var(--bs-default-horizontal-spacing);
+		float: right; 
+		clear: right; 
+	}
+
 	/// Text alignment.
 	.text-left { text-align: left; }
-	.text-center { text-align: center; }
 	.text-right { text-align: right; }
+	.text-center { text-align: center; }
 	.text-justify { text-align: justify; }
 
 }
