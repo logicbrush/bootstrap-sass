@@ -3,27 +3,27 @@
 %bs-grid-support {
 
 	--bs-default-grid-total-width: 100vw;
-	--bs-default-grid-gutter-width: calc(var(--bs-default-grid-total-width) / 20);
-	--bs-default-grid-outer-width: calc(var(--bs-default-grid-gutter-width) / 2);
+	--bs-default-grid-spacing: calc(var(--bs-default-grid-total-width) / 20);
+	--bs-default-grid-margin: calc(var(--bs-default-grid-spacing) / 2);
 
 	%bs-grid-layout-base {
 
 		--bs-grid-total-width: var(--bs-default-grid-total-width);
-		--bs-grid-gutter-width: var(--bs-default-grid-gutter-width);
-		--bs-grid-outer-width: var(--bs-default-grid-outer-width);
+		--bs-grid-spacing: var(--bs-default-grid-spacing);
+		--bs-grid-margin: var(--bs-default-grid-margin);
 
 		@extend %bs-block-base;
 
 		--bs-grid-calculated-column-width: calc(
 			(
 				var(--bs-grid-total-width) - 
-				var(--bs-grid-gutter-width) * 11 - 
-				var(--bs-grid-outer-width) * 2 
+				var(--bs-grid-spacing) * 11 - 
+				var(--bs-grid-margin) * 2 
 			) / 12
 		);
 		--bs-grid-calculated-outer-padding-width: calc(
-			var(--bs-grid-outer-width) - 
-			var(--bs-grid-gutter-width) / 2
+			var(--bs-grid-margin) - 
+			var(--bs-grid-spacing) / 2
 		);
 
 		box-sizing: border-box;
@@ -41,12 +41,13 @@
 				@extend %bs-block-base;
 
 				box-sizing: border-box;
-				margin-left: calc(var(--bs-grid-gutter-width) * 0.5);
-				margin-right: calc(var(--bs-grid-gutter-width) * 0.5);
+				margin-left: calc(var(--bs-grid-spacing) * 0.5);
+				margin-right: calc(var(--bs-grid-spacing) * 0.5);
 				width: calc(
 					var(--bs-grid-calculated-column-width) * #{$count} + 
-					var(--bs-grid-gutter-width) * #{$count - 1}
+					var(--bs-grid-spacing) * #{$count - 1}
 				);
+				max-width: 100%;
 
 				position: relative;
 				float: left;
@@ -71,8 +72,9 @@
 		// When you embed a grid-layout in a grid-layout, its margins collapse
 		// so everything continues to line up.
 		.bs-grid-layout {
-			margin-left: calc(var(--bs-grid-outer-width) * -1) !important;
-			margin-right: calc(var(--bs-grid-outer-width) * -1) !important;
+			margin-left: calc(var(--bs-grid-margin) * -1) !important;
+			margin-right: calc(var(--bs-grid-margin) * -1) !important;
+			max-width: calc(100% + var(--bs-grid-margin) * 2) !important;
 		}
 		
 	}
