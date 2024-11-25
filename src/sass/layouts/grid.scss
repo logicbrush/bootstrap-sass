@@ -7,14 +7,14 @@
 	--bs-default-grid-margin: calc(var(--bs-default-grid-spacing) / 2);
 
 	/// Set this to 1 to conditionally disable the grid.
-	--bs-default-disable-grid: 0;	
+	--bs-default-grid-off: 0;	
 
 	%bs-grid-layout-base {
 
 		--bs-grid-total-width: var(--bs-default-grid-total-width);
 		--bs-grid-spacing: var(--bs-default-grid-spacing);
 		--bs-grid-margin: var(--bs-default-grid-margin);
-		--bs-disable-grid: var(--bs-default-disable-grid);
+		--bs-grid-off: var(--bs-default-grid-off);
 
 		@extend %bs-block-base;
 
@@ -56,7 +56,7 @@
 						var(--bs-grid-calculated-column-width) * #{$count} + 
 						var(--bs-grid-spacing) * #{$count - 1}
 					),
-					var(--bs-disable-grid) * 100%
+					var(--bs-grid-off) * 100%
 				);
 
 			}
