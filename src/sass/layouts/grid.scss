@@ -71,8 +71,8 @@
 		// When you embed a grid-layout in a grid-layout, its margins collapse
 		// so everything continues to line up.
 		.bs-grid-layout {
-			margin-left: calc(var(--bs-default-grid-outer-width) * -1) !important;
-			margin-right: calc(var(--bs-default-grid-outer-width) * -1) !important;
+			margin-left: calc(var(--bs-grid-outer-width) * -1) !important;
+			margin-right: calc(var(--bs-grid-outer-width) * -1) !important;
 		}
 		
 	}
