@@ -2,7 +2,7 @@
 
 %bs-grid-support {
 
-	--bs-default-grid-total-width: 100%;
+	--bs-default-grid-total-width: 100vw;
 	--bs-default-grid-gutter-width: calc(var(--bs-default-grid-total-width) / 20);
 	--bs-default-grid-outer-width: calc(var(--bs-default-grid-gutter-width) / 2);
 
