@@ -44,13 +44,9 @@
 
 				@extend %bs-block-base;
 
-				box-sizing: border-box;
-				margin-left: calc(var(--bs-grid-spacing) * 0.5);
-				margin-right: calc(var(--bs-grid-spacing) * 0.5);
-				position: relative;
-				max-width: 100%;
-				width: 100%;
-
+				/// Whoa, what a hack!  We're using the `max` function along
+				/// with the 0,1 value of `--bs-grid-disabled` to allow the grid
+				/// to be turned on/off via a CSS variable switch.
 				width: max(
 					calc(
 						var(--bs-grid-calculated-column-width) * #{$count} + 
@@ -58,6 +54,13 @@
 					),
 					var(--bs-grid-disabled) * 100%
 				);
+
+				margin-left: calc(var(--bs-grid-spacing) * 0.5);
+				margin-right: calc(var(--bs-grid-spacing) * 0.5);
+
+				box-sizing: border-box;
+				position: relative;
+				max-width: 100%;
 
 			}
 		}
