@@ -80,6 +80,14 @@
 		font-size: var(--bs-default-heading-font-size);
 		line-height: var(--bs-default-heading-line-height);
 		color: var(--bs-default-heading-font-color);
+		%bs-link-base { 
+			text-decoration: none; 
+			font-family: inherit; 
+			font-weight: inherit; 
+			font-style: inherit; 
+			font-size: inherit; 
+			color: inherit; 
+		}
 	}
 	@for $i from 1 through 6 {
 		h#{$i} { 
@@ -116,6 +124,7 @@
 	/// Links.
 	%bs-link-base {
 		color: var(--bs-default-accent-color-1);
+		&:hover { text-decoration: underline; }
 	}
 	a { @extend %bs-link-base; }
 }
