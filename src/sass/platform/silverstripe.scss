@@ -2,6 +2,11 @@
 
 %bs-silverstripe-support {
 
+	%bs-silverstripe-responsive-image-base {
+		max-width: 100%;
+		height: auto;
+	}
+
 	/// Block alignment.
 	.leftAlone {
 		@extend %bs-block-base;
@@ -9,28 +14,37 @@
 		margin-left: 0;
 		margin-right: auto;
 	}
+	img.leftAlone { @extend %bs-silverstripe-responsive-image-base; }
 	.rightAlone {
 		@extend %bs-block-base;
 		@extend %bs-typography-base;
 		margin-left: auto;
 		margin-right: 0;
 	}
+	img.rightAlone { @extend %bs-silverstripe-responsive-image-base; }
 	.center {
 		@extend %bs-block-base;
 		@extend %bs-typography-base;
 		margin-left: auto;
 		margin-right: auto;
 	}
+	img.center { @extend %bs-silverstripe-responsive-image-base; }
 	.left {
+		@extend .leftAlone;
 		margin-right: var(--bs-default-horizontal-spacing);
+		margin-block-start: 0;
 		float: left; 
 		clear: left; 
 	}
+	img.left { max-width: calc(50% - var(--bs-default-horizontal-spacing) / 2); }
 	.right { 
+		@extend .rightAlone;
 		margin-left: var(--bs-default-horizontal-spacing);
+		margin-block-start: 0;
 		float: right; 
 		clear: right; 
 	}
+	img.right { max-width: calc(50% - var(--bs-default-horizontal-spacing) / 2); }
 
 	/// Text alignment.
 	.text-left { text-align: left; }
