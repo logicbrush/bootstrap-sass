@@ -62,13 +62,30 @@
 			}
 		}
 
-		.bs-span-all { @extend .bs-span-12; }
-		.bs-span-three-quarters { @extend .bs-span-9; }
-		.bs-span-two-thirds { @extend .bs-span-8; }
-		.bs-span-one-half { @extend .bs-span-6; }
-		.bs-span-one-third { @extend .bs-span-4; }
-		.bs-span-one-quarter { @extend .bs-span-3; }
-		.bs-span-one-eigth { @extend .bs-span-2; }
+		.bs-span-all { 
+			@extend .bs-span-12;
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 1 * 1);
+		}
+		.bs-span-three-quarters { 
+			@extend .bs-span-9; 
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 4 * 3);
+		}
+		.bs-span-two-thirds { 
+			@extend .bs-span-8; 
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 3 * 2);
+		}
+		.bs-span-one-half { 
+			@extend .bs-span-6; 
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 2 * 1);
+		}
+		.bs-span-one-third { 
+			@extend .bs-span-4; 
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 3 * 1);
+		}
+		.bs-span-one-quarter { 
+			@extend .bs-span-3; 
+			width: calc((100% - var(--bs-grid-spacing) * 2) / 4 * 1);
+		}
 
 	}
 
