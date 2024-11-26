@@ -11,10 +11,10 @@
 
 	%bs-grid-layout-base {
 
-		--bs-grid-total-width: var(--bs-default-grid-total-width);
-		--bs-grid-spacing: var(--bs-default-grid-spacing);
-		--bs-grid-margin: var(--bs-default-grid-margin);
-		--bs-grid-disabled: var(--bs-default-grid-disabled);
+		--bs-grid-total-width: var(--bs-default-grid-total-width) !important;
+		--bs-grid-spacing: var(--bs-default-grid-spacing) !important;
+		--bs-grid-margin: var(--bs-default-grid-margin) !important;
+		--bs-grid-disabled: var(--bs-default-grid-disabled) !important;
 
 		@extend %bs-block-base;
 
@@ -64,15 +64,15 @@
 
 		.bs-span-all { 
 			@extend .bs-span-12;
-			width: calc((100% - var(--bs-grid-spacing) * 2) / 1 * 1);
+			width: calc((100% - var(--bs-grid-spacing) * 1) / 1 * 1);
 		}
 		.bs-span-three-quarters { 
 			@extend .bs-span-9; 
-			width: calc((100% - var(--bs-grid-spacing) * 2) / 4 * 3);
+			width: calc((100% - var(--bs-grid-spacing) * 4) / 4 * 3);
 		}
 		.bs-span-two-thirds { 
 			@extend .bs-span-8; 
-			width: calc((100% - var(--bs-grid-spacing) * 2) / 3 * 2);
+			width: calc((100% - var(--bs-grid-spacing) * 3) / 3 * 2);
 		}
 		.bs-span-one-half { 
 			@extend .bs-span-6; 
@@ -80,11 +80,11 @@
 		}
 		.bs-span-one-third { 
 			@extend .bs-span-4; 
-			width: calc((100% - var(--bs-grid-spacing) * 2) / 3 * 1);
+			width: calc((100% - var(--bs-grid-spacing) * 3) / 3 * 1);
 		}
 		.bs-span-one-quarter { 
 			@extend .bs-span-3; 
-			width: calc((100% - var(--bs-grid-spacing) * 2) / 4 * 1);
+			width: calc((100% - var(--bs-grid-spacing) * 4) / 4 * 1);
 		}
 
 	}
