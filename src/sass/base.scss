@@ -127,4 +127,7 @@
 		&:hover { text-decoration: underline; }
 	}
 	a { @extend %bs-link-base; }
+
+	/// Rules
+	hr { border-top: 1px solid var(--bs-default-font-color); }
 }
