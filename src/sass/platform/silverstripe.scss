@@ -13,6 +13,7 @@
 		@extend %bs-typography-base;
 		margin-left: 0;
 		margin-right: auto;
+		text-align: center;
 	}
 	img.leftAlone { @extend %bs-silverstripe-responsive-image-base; }
 	.rightAlone {
@@ -27,6 +28,7 @@
 		@extend %bs-typography-base;
 		margin-left: auto;
 		margin-right: auto;
+		text-align: center;
 	}
 	img.center { @extend %bs-silverstripe-responsive-image-base; }
 	.left {
@@ -35,6 +37,7 @@
 		margin-block-start: 0;
 		float: left; 
 		clear: left; 
+		text-align: center;
 	}
 	img.left { max-width: calc(50% - var(--bs-default-horizontal-spacing) / 2); }
 	.right { 
@@ -45,6 +48,11 @@
 		clear: right; 
 	}
 	img.right { max-width: calc(50% - var(--bs-default-horizontal-spacing) / 2); }
+	.captionImage {
+		.caption {
+			font-size: 85%;
+		}
+	}
 
 	/// Text alignment.
 	.text-left { text-align: left; }
