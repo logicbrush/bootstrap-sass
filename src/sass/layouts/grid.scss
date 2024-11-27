@@ -30,10 +30,11 @@
 			var(--bs-grid-spacing) / 2
 		);
 
-		box-sizing: border-box;
 		padding-left: var(--bs-grid-calculated-outer-padding-width);
 		padding-right: var(--bs-grid-calculated-outer-padding-width);
 		width: var(--bs-grid-total-width);
+		row-gap: var(--bs-default-vertical-spacing);
+		box-sizing: border-box;
 		margin-left: auto;
 		margin-right: auto;
 		display: flex;
