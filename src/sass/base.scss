@@ -92,7 +92,7 @@
 	@for $i from 1 through 6 {
 		h#{$i} { 
 			@extend %bs-heading-base; 
-			font-size: calc(var(--bs-default-heading-font-size) / (1 + (#{$i} - 1)/10));
+			font-size: calc(var(--bs-default-heading-font-size) / (1 + (#{$i} - 1)/5));
 		}
 	}
 
