@@ -74,12 +74,16 @@
 	// Headings.
 	%bs-heading-base {
 		@extend %bs-typography-base;
+
 		font-family: var(--bs-default-heading-font-family); 
 		font-weight: var(--bs-default-heading-font-weight);
 		font-style: var(--bs-default-heading-font-style);
 		font-size: var(--bs-default-heading-font-size);
 		line-height: var(--bs-default-heading-line-height);
 		color: var(--bs-default-heading-font-color);
+		break-inside: avoid;
+		break-after: avoid;
+
 		%bs-link-base { 
 			text-decoration: none; 
 			font-family: inherit; 
