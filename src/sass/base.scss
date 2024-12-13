@@ -106,16 +106,18 @@
 		margin-bottom: calc(var(--bs-default-vertical-spacing) / 3);
 		display: list-item;
 	}
-	ul li, ol li { @extend %bs-list-item-base; }
+	ul li, ol li, menu li { 
+		@extend %bs-list-item-base; 
+	}
+	menu li {
+		display: block;
+	}
 	%bs-list-base {
 		@extend %bs-typography-base;
 	}
 	ul,ol { 
 		@extend %bs-list-base; 
 		margin-left: calc(var(--bs-default-horizontal-spacing) * 2);
-	}
-	menu {
-		line-height: 1.2; // This is not a good spot for this.
 	}
 
 	/// Blockquotes
@@ -135,7 +137,7 @@
 		text-decoration: none;
 	}
 	a { @extend %bs-link-base; }
-	%bs-list-base, %bs-typography-base {
+	ul, ol, p {
 		a { text-decoration: underline; }
 	}
 
