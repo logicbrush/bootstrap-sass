@@ -114,6 +114,9 @@
 		@extend %bs-list-base; 
 		margin-left: calc(var(--bs-default-horizontal-spacing) * 2);
 	}
+	menu {
+		line-height: 1.2; // This is not a good spot for this.
+	}
 
 	/// Blockquotes
 	%bs-blockquote-base {
@@ -127,10 +130,14 @@
 
 	/// Links.
 	%bs-link-base {
-		color: var(--bs-default-accent-color-1);
 		&:hover { text-decoration: underline; }
+		color: var(--bs-default-accent-color-1);
+		text-decoration: none;
 	}
 	a { @extend %bs-link-base; }
+	%bs-list-base, %bs-typography-base {
+		a { text-decoration: underline; }
+	}
 
 	/// Rules
 	hr { border-top: 1px solid var(--bs-default-font-color); }
