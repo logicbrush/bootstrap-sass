@@ -109,24 +109,12 @@
 	ul li, ol li, menu li { 
 		@extend %bs-list-item-base; 
 	}
-	menu li {
-		&::before { 
-			content: '— '; 
-			display: block;
-			position: absolute;
-			margin-left: -1em;
-		}
-		display: block;
-	}
 	%bs-list-base {
 		@extend %bs-typography-base;
 	}
 	ul,ol,menu { 
 		@extend %bs-list-base; 
 		margin-left: calc(var(--bs-default-horizontal-spacing) * 2);
-	}
-	menu {
-		margin-left: 1em;
 	}
 
 	/// Blockquotes
