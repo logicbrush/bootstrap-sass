@@ -52,7 +52,7 @@
 
   %flow-escape-content-left-wrapped, %flow-escape-content-right-wrapped {
     @extend %flow-escape-defaults;
-    max-width: 50%;
+    max-width: 50% !important;
     margin-top: 0.5ex;
   }
 
