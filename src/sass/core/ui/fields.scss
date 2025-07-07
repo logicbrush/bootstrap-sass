@@ -151,7 +151,8 @@
 
 		&.error,
 		&.required,
-		&.validation {
+		&.validation,
+		&.bad {
 			background-color: #f2dede;
 		}
 	}
