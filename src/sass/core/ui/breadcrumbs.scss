@@ -2,13 +2,17 @@
 
 	.breadcrumbs {
 		ol {
+
+			&, &>li {
+				@extend %block-content;
+				padding-left: 0 !important;
+			}
+
 			color: mix($default-text-color, $default-background-color, 50%);
 			font-style: italic;
 			font-size: $default-text-size * 0.85 !important;
-			padding: 0;
-			margin: 0;
 
-			li {
+			&>li {
 				list-style: none;
 				display: inline-block;
 
