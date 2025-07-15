@@ -13,7 +13,7 @@
 		@extend %flow-escape-content-left;
 	}
 
-	.left {
+	.left:not(.field *) {
 		@extend %flow-escape-content-left-wrapped;
 	}
 
@@ -21,7 +21,7 @@
 		@extend %flow-escape-content-right;
 	}
 
-	.right {
+	.right:not(.field *) {
 		@extend %flow-escape-content-right-wrapped;
 	}
 
